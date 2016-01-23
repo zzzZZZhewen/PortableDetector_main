@@ -9,28 +9,32 @@
 import Foundation
 import AVFoundation
 
+//MARK - class
 class CameraManager {
-    // 单例模式
+//MARK - 单例模式
     private static let instance = CameraManager()
-    /// 定义一个类变量，提供全局的访问入口，类变量不能存储数值，但是可以返回数值
+    
     class var sharedManager: CameraManager {
         return instance
     }
     
-    //MARK - property
-    var previewLayer: AVCaptureVideoPreviewLayer!
-    var captureSession : AVCaptureSession!
-    var metadataOutput: AVCaptureMetadataOutput!
-    var videoDevice:AVCaptureDevice!
-    var videoInput: AVCaptureDeviceInput!
-    var running = false
+//MARK - property
     
-    
-    func shoot(picName:String , completion: (result: AnyObject?, error: NSError?) -> ()) {
-        // paizhaowanbi
-        
-        completion(result: nil,error: nil)
+//MARK - services
+    func shootWithName(picName:String) {
+        //
+        //
+        //告诉调用者，事情已经办完了
+        self.didShootCompletedHandeler(result: true, error: nil)
     }
     
+//MARK - handler
+    var didShootCompletedHandeler : ManagerMissionCompletedCloureWithResultError = {(result : AnyObject?, error : ErrorType?) -> () in return}
+    
+    // set handler
+    func addDidShootCompletedHandeler (handler : ManagerMissionCompletedCloureWithResultError!) {
+        self.didShootCompletedHandeler = handler
+    }
+
     
 }

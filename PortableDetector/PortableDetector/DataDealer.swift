@@ -8,51 +8,50 @@
 
 import Foundation
 
-
+//MARK - delegate
 protocol DataDealerDelegate {
     
     func didGetPlateString(plateString: String)
-    func didGetBatteryAValue(value : Int)
     
 }
 
+//MARK - class
 class DataDealer {
     
+//MARK - properties
     var delegate : DataDealerDelegate!
     
-    typealias Completion = (result: AnyObject?, error: NSError?) -> ()
     
-    func reading() {
-        
-        
-        //case
+//MARK - services
+    func readingFile() {
+    
+        // case 开始拍照
         // dispatch
+            // 
+        let picName = TNiOSHelper.getDocumentsPath().stringByAppendingString("pic.png")
         
-        CameraManager.sharedManager.shoot("haha.png" , completion: { (result, error) -> () in
-            
-            var flag = result as! Bool
-            
-            if flag {
-                PlateManager.sharedManager.recognize("haha.png") { (result, error) -> () in
-                    
-                    var plateString  = result as! String
-                    
-                    // save
-                    
-                    
-                    if delegate != nil {
-                        
-                        delegate.didGetPlateString(plateString)
-                    }
-                    
-                    
-                }
+        
+        
+        CameraManager.sharedManager.addDidShootCompletedHandeler { (result, error) -> () in
+            let answer = result as! Bool
+            //拍照成功
+            if answer {
+                PlateManager.sharedManager.analyseWithName(picName)
             }
-            
-        });
+        }
         
-        //end dispatch
+        PlateManager.sharedManager.addDidAnalyseCompletedHandeler { (result, error) -> () in
+            //得到车牌字符串
+            let plateString = result as! String
+            self.delegate.didGetPlateString(plateString)
+        }
         
-        //end case
+        CameraManager.sharedManager.shootWithName(picName)
+            //
+        // end dispatch
+        // end case
     }
+    
+//MARK - getters
+    
 }

@@ -11,14 +11,14 @@ import Foundation
 
 class TNiOSHelper {
     
-    private static let instance = TNiOSHelper()
-    /// 定义一个类变量，提供全局的访问入口，类变量不能存储数值，但是可以返回数值
-    class var sharedHelper: TNiOSHelper {
-        return instance
-    }
+//    private static let instance = TNiOSHelper()
+//    /// 定义一个类变量，提供全局的访问入口，类变量不能存储数值，但是可以返回数值
+//    class var sharedHelper: TNiOSHelper {
+//        return instance
+//    }
     
     
-    func getDocumentsPath () -> String! {
+    class func getDocumentsPath () -> String! {
         //save in documents
         let documentsPath = NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.DocumentDirectory, NSSearchPathDomainMask.UserDomainMask, true).last
         
@@ -26,4 +26,6 @@ class TNiOSHelper {
         
         return documentsPath
     }
+    
+    
 }
