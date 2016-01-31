@@ -9,9 +9,7 @@
 /* Begin PBXBuildFile section */
 		7020E79AA70E5A0CFD485EC0 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9AF5DFBA57AA5D7CD63AF544 /* Pods.framework */; };
 		810016D71C53AA3200C0CB89 /* RecordsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810016D61C53AA3200C0CB89 /* RecordsModel.swift */; };
-		810016D91C53AB3200C0CB89 /* CoreModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810016D81C53AB3200C0CB89 /* CoreModel.swift */; };
-		810016DB1C53AC6D00C0CB89 /* CoreTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810016DA1C53AC6D00C0CB89 /* CoreTool.swift */; };
-		810D4B2B1C4EB7580075A5FC /* ExampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810D4B2A1C4EB7570075A5FC /* ExampleViewController.swift */; };
+		810D4B2B1C4EB7580075A5FC /* StatusRecordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810D4B2A1C4EB7570075A5FC /* StatusRecordViewController.swift */; };
 		810D4B351C4F26A40075A5FC /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810D4B341C4F26A40075A5FC /* NetworkManager.swift */; };
 		810D4B371C4F27130075A5FC /* SimpleNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810D4B361C4F27130075A5FC /* SimpleNetwork.swift */; };
 		81A0C2EB1C4E546400FE0D3D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A0C2EA1C4E546400FE0D3D /* AppDelegate.swift */; };
@@ -25,8 +23,12 @@
 		81A0C30E1C4E546400FE0D3D /* InterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A0C30D1C4E546400FE0D3D /* InterfaceController.swift */; };
 		81A0C3101C4E546400FE0D3D /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A0C30F1C4E546400FE0D3D /* ExtensionDelegate.swift */; };
 		81A0C3121C4E546400FE0D3D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 81A0C3111C4E546400FE0D3D /* Assets.xcassets */; };
-		81CA4F061C50C57700C0CA6A /* RecordModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81CA4F051C50C57700C0CA6A /* RecordModel.swift */; };
-		81CA4F081C50C7A700C0CA6A /* DataDealer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81CA4F071C50C7A700C0CA6A /* DataDealer.swift */; };
+		81ABE6921C5E0116009B90BA /* Record.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81ABE6911C5E0116009B90BA /* Record.swift */; };
+		81ABE6941C5E0126009B90BA /* Status.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81ABE6931C5E0126009B90BA /* Status.swift */; };
+		81ABE6961C5E0293009B90BA /* RecordsDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81ABE6951C5E0293009B90BA /* RecordsDataManager.swift */; };
+		81ABE6981C5E02F8009B90BA /* Records.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81ABE6971C5E02F8009B90BA /* Records.swift */; };
+		81CA4F061C50C57700C0CA6A /* StatusRecordModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81CA4F051C50C57700C0CA6A /* StatusRecordModel.swift */; };
+		81CA4F081C50C7A700C0CA6A /* StatusRecordDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81CA4F071C50C7A700C0CA6A /* StatusRecordDataManager.swift */; };
 		81CA4F0A1C50C7F500C0CA6A /* CameraManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81CA4F091C50C7F500C0CA6A /* CameraManager.swift */; };
 		81CA4F0C1C50C83C00C0CA6A /* PlateManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81CA4F0B1C50C83C00C0CA6A /* PlateManager.swift */; };
 		81CA4F0E1C50D22600C0CA6A /* TNiOSHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81CA4F0D1C50D22600C0CA6A /* TNiOSHelper.swift */; };
@@ -79,9 +81,7 @@
 		122F584C77C686FDB228E371 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		583D3C27E4BB74D096100BEB /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		810016D61C53AA3200C0CB89 /* RecordsModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordsModel.swift; sourceTree = "<group>"; };
-		810016D81C53AB3200C0CB89 /* CoreModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreModel.swift; sourceTree = "<group>"; };
-		810016DA1C53AC6D00C0CB89 /* CoreTool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreTool.swift; sourceTree = "<group>"; };
-		810D4B2A1C4EB7570075A5FC /* ExampleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExampleViewController.swift; sourceTree = "<group>"; };
+		810D4B2A1C4EB7570075A5FC /* StatusRecordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusRecordViewController.swift; sourceTree = "<group>"; };
 		810D4B341C4F26A40075A5FC /* NetworkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		810D4B361C4F27130075A5FC /* SimpleNetwork.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SimpleNetwork.swift; sourceTree = "<group>"; };
 		81A0C2E71C4E546400FE0D3D /* PortableDetector.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PortableDetector.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -99,8 +99,12 @@
 		81A0C30F1C4E546400FE0D3D /* ExtensionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionDelegate.swift; sourceTree = "<group>"; };
 		81A0C3111C4E546400FE0D3D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		81A0C3131C4E546400FE0D3D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		81CA4F051C50C57700C0CA6A /* RecordModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordModel.swift; sourceTree = "<group>"; };
-		81CA4F071C50C7A700C0CA6A /* DataDealer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataDealer.swift; sourceTree = "<group>"; };
+		81ABE6911C5E0116009B90BA /* Record.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Record.swift; sourceTree = "<group>"; };
+		81ABE6931C5E0126009B90BA /* Status.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Status.swift; sourceTree = "<group>"; };
+		81ABE6951C5E0293009B90BA /* RecordsDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordsDataManager.swift; sourceTree = "<group>"; };
+		81ABE6971C5E02F8009B90BA /* Records.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Records.swift; sourceTree = "<group>"; };
+		81CA4F051C50C57700C0CA6A /* StatusRecordModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusRecordModel.swift; sourceTree = "<group>"; };
+		81CA4F071C50C7A700C0CA6A /* StatusRecordDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusRecordDataManager.swift; sourceTree = "<group>"; };
 		81CA4F091C50C7F500C0CA6A /* CameraManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraManager.swift; sourceTree = "<group>"; };
 		81CA4F0B1C50C83C00C0CA6A /* PlateManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlateManager.swift; sourceTree = "<group>"; };
 		81CA4F0D1C50D22600C0CA6A /* TNiOSHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TNiOSHelper.swift; sourceTree = "<group>"; };
@@ -157,9 +161,8 @@
 		810D4B251C4EB31F0075A5FC /* BusinessModels(业务模型) */ = {
 			isa = PBXGroup;
 			children = (
-				81CA4F051C50C57700C0CA6A /* RecordModel.swift */,
+				81CA4F051C50C57700C0CA6A /* StatusRecordModel.swift */,
 				810016D61C53AA3200C0CB89 /* RecordsModel.swift */,
-				810016D81C53AB3200C0CB89 /* CoreModel.swift */,
 			);
 			name = "BusinessModels(业务模型)";
 			sourceTree = "<group>";
@@ -170,7 +173,6 @@
 				81CA4F091C50C7F500C0CA6A /* CameraManager.swift */,
 				81CA4F0B1C50C83C00C0CA6A /* PlateManager.swift */,
 				81CA4F131C511A2800C0CA6A /* DatabaseManager.swift */,
-				810016DA1C53AC6D00C0CB89 /* CoreTool.swift */,
 				810D4B341C4F26A40075A5FC /* NetworkManager.swift */,
 				810D4B361C4F27130075A5FC /* SimpleNetwork.swift */,
 			);
@@ -203,7 +205,7 @@
 		810D4B2E1C4EB7FE0075A5FC /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				810D4B2A1C4EB7570075A5FC /* ExampleViewController.swift */,
+				810D4B2A1C4EB7570075A5FC /* StatusRecordViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -244,6 +246,7 @@
 				810D4B271C4EB3540075A5FC /* UI */,
 				810D4B2E1C4EB7FE0075A5FC /* Controllers */,
 				810D4B251C4EB31F0075A5FC /* BusinessModels(业务模型) */,
+				81ABE6901C5E0101009B90BA /* DataModel */,
 				81CA4F151C511A3A00C0CA6A /* DataPersistance */,
 				810D4B261C4EB33B0075A5FC /* Tools(工具) */,
 				810D4B241C4EB2D20075A5FC /* Supporting */,
@@ -275,10 +278,21 @@
 			path = "PortableDetector WatchKit Extension";
 			sourceTree = "<group>";
 		};
+		81ABE6901C5E0101009B90BA /* DataModel */ = {
+			isa = PBXGroup;
+			children = (
+				81ABE6931C5E0126009B90BA /* Status.swift */,
+				81ABE6911C5E0116009B90BA /* Record.swift */,
+				81ABE6971C5E02F8009B90BA /* Records.swift */,
+			);
+			name = DataModel;
+			sourceTree = "<group>";
+		};
 		81CA4F151C511A3A00C0CA6A /* DataPersistance */ = {
 			isa = PBXGroup;
 			children = (
-				81CA4F071C50C7A700C0CA6A /* DataDealer.swift */,
+				81CA4F071C50C7A700C0CA6A /* StatusRecordDataManager.swift */,
+				81ABE6951C5E0293009B90BA /* RecordsDataManager.swift */,
 			);
 			name = DataPersistance;
 			sourceTree = "<group>";
@@ -481,15 +495,17 @@
 				81CA4F0C1C50C83C00C0CA6A /* PlateManager.swift in Sources */,
 				81CA4F141C511A2800C0CA6A /* DatabaseManager.swift in Sources */,
 				810D4B351C4F26A40075A5FC /* NetworkManager.swift in Sources */,
+				81ABE6981C5E02F8009B90BA /* Records.swift in Sources */,
+				81ABE6921C5E0116009B90BA /* Record.swift in Sources */,
 				810D4B371C4F27130075A5FC /* SimpleNetwork.swift in Sources */,
 				81CA4F0E1C50D22600C0CA6A /* TNiOSHelper.swift in Sources */,
-				810016DB1C53AC6D00C0CB89 /* CoreTool.swift in Sources */,
 				81CA4F0A1C50C7F500C0CA6A /* CameraManager.swift in Sources */,
 				81A0C2EB1C4E546400FE0D3D /* AppDelegate.swift in Sources */,
-				810016D91C53AB3200C0CB89 /* CoreModel.swift in Sources */,
-				81CA4F061C50C57700C0CA6A /* RecordModel.swift in Sources */,
-				81CA4F081C50C7A700C0CA6A /* DataDealer.swift in Sources */,
-				810D4B2B1C4EB7580075A5FC /* ExampleViewController.swift in Sources */,
+				81ABE6961C5E0293009B90BA /* RecordsDataManager.swift in Sources */,
+				81ABE6941C5E0126009B90BA /* Status.swift in Sources */,
+				81CA4F061C50C57700C0CA6A /* StatusRecordModel.swift in Sources */,
+				81CA4F081C50C7A700C0CA6A /* StatusRecordDataManager.swift in Sources */,
+				810D4B2B1C4EB7580075A5FC /* StatusRecordViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

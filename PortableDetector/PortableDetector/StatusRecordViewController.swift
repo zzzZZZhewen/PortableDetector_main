@@ -25,11 +25,14 @@
 import UIKit
 import AVFoundation
 
-class ExampleViewController: UIViewController {
+
+/// 主页面，用来显示检测状态（status）和最近一条记录（record）
+/// 业务逻辑在 StatusRecordModel中实现
+class StatusRecordViewController: UIViewController {
     
 //MARK - properties
-    // 一个viewcontroller对应一个业务逻辑
-    var model = RecordModel()
+    /// 一个StatusRecordViewController对应的业务逻辑
+    var model = StatusRecordModel()
     
 //MARK - life cycle
     override func viewDidLoad() {
@@ -94,13 +97,11 @@ class ExampleViewController: UIViewController {
 //MARK - extention
 
 //MARK - RecordModelDelegate
-extension ExampleViewController : RecordModelDelegate {
+extension StatusRecordViewController : StatusRecordModelDelegate {
     //所有字符串都得到以后更新视图 去掉现在图片 等待加载图片
     //缪：我的想法是 这里虽然以车牌为例 但是车牌可能是最后才识别出来，所以可以先显示车辆是否超重和其他信息
-    func didGetAllString(model: CoreModel!) {
-        let m = model as? RecordModel
-        if m != nil {
-           aLabel.text = m!.plateString
-        }
+    func didGetAllString() {
+        /// ViewController控制的View可以直接使用业务逻辑中的字符串来更新页面
+        // self.aLabel = self.model.statusString
     }
 }

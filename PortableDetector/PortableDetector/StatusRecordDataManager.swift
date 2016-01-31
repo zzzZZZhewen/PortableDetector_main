@@ -9,17 +9,18 @@
 import Foundation
 
 //MARK - delegate
-@objc protocol DataDealerDelegate {
+@objc protocol StatusRecordDataManagerDelegate {
     
     func didGetPlateString(plateString: String)
     
 }
 
-//MARK - class
-class DataDealer {
+/// 专门用来给StatusRecordModel的用例实现数据层操作的类
+/// 主要目标是让逻辑层不关心数据是怎么来 怎么去的
+class StatusRecordDataManager {
     
 //MARK - properties
-    weak var delegate : DataDealerDelegate!
+    weak var delegate : StatusRecordDataManagerDelegate!
     
     
 //MARK - services
