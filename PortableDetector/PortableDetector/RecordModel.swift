@@ -10,22 +10,22 @@ import Foundation
 
 //MARK － delegate 
 //定义代理的 回调函数 表示层对Model类在运行期间需要我们关系的事情进行处理
-protocol RecordModelDelegate {
+@objc protocol RecordModelDelegate {
     //获得了所有字符串来更新视图
-    func didGetAllString (model : CoreModel!)
+    func didGetAllString (model : RecordModel!)
     
 }
 
-//MARK - class
+//MARK: - class
 //检测页面的业务逻辑，保存最近的一条记录
-class RecordModel : CoreModel {
+class RecordModel : NSObject {
     
 //MARK - properties
     var plateString : String?
     var batteryA : String?
     
     //上层代理
-    var delegate: RecordModelDelegate!
+    weak var delegate: RecordModelDelegate!
     //缓存经常用的下层
     var dataDealer = DataDealer()
     

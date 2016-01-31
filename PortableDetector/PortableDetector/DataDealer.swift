@@ -9,7 +9,7 @@
 import Foundation
 
 //MARK - delegate
-protocol DataDealerDelegate {
+@objc protocol DataDealerDelegate {
     
     func didGetPlateString(plateString: String)
     
@@ -19,7 +19,7 @@ protocol DataDealerDelegate {
 class DataDealer {
     
 //MARK - properties
-    var delegate : DataDealerDelegate!
+    weak var delegate : DataDealerDelegate!
     
     
 //MARK - services
@@ -29,8 +29,6 @@ class DataDealer {
         // dispatch
             // 
         let picName = TNiOSHelper.getDocumentsPath().stringByAppendingString("pic.png")
-        
-        
         
         CameraManager.sharedManager.addDidShootCompletedHandeler { (result, error) -> () in
             let answer = result as! Bool

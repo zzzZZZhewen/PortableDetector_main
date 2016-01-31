@@ -173,7 +173,6 @@
 				810016DA1C53AC6D00C0CB89 /* CoreTool.swift */,
 				810D4B341C4F26A40075A5FC /* NetworkManager.swift */,
 				810D4B361C4F27130075A5FC /* SimpleNetwork.swift */,
-				81CA4F0D1C50D22600C0CA6A /* TNiOSHelper.swift */,
 			);
 			name = "Tools(工具)";
 			sourceTree = "<group>";
@@ -241,6 +240,7 @@
 		81A0C2E91C4E546400FE0D3D /* PortableDetector */ = {
 			isa = PBXGroup;
 			children = (
+				81F5C2111C5B920F00B43524 /* Utils */,
 				810D4B271C4EB3540075A5FC /* UI */,
 				810D4B2E1C4EB7FE0075A5FC /* Controllers */,
 				810D4B251C4EB31F0075A5FC /* BusinessModels(业务模型) */,
@@ -281,6 +281,14 @@
 				81CA4F071C50C7A700C0CA6A /* DataDealer.swift */,
 			);
 			name = DataPersistance;
+			sourceTree = "<group>";
+		};
+		81F5C2111C5B920F00B43524 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				81CA4F0D1C50D22600C0CA6A /* TNiOSHelper.swift */,
+			);
+			name = Utils;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
