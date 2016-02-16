@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   type = "1"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "CustomCamera/ViewController.swift"
+            timestampString = "477328353.574015"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "16"
+            endingLineNumber = "16"
+            landmarkName = "ViewController"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "CustomCamera.ViewController.preview.getter : weak Swift.ImplicitlyUnwrappedOptional&lt;__ObjC.UIView&gt;"
+                  moduleName = "CustomCamera"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/miaozhewen/Downloads/GIT/PortableDetector_main/CustomCamera/CustomCamera/ViewController.swift"
+                  timestampString = "477328353.621974"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "24">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "CustomCamera.ViewController.preview.setter : weak Swift.ImplicitlyUnwrappedOptional&lt;__ObjC.UIView&gt;"
+                  moduleName = "CustomCamera"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/miaozhewen/Downloads/GIT/PortableDetector_main/CustomCamera/CustomCamera/ViewController.swift"
+                  timestampString = "477328353.623913"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "28">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "CustomCamera.ViewController.preview.materializeForSet : weak Swift.ImplicitlyUnwrappedOptional&lt;__ObjC.UIView&gt;"
+                  moduleName = "CustomCamera"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/miaozhewen/Downloads/GIT/PortableDetector_main/CustomCamera/CustomCamera/ViewController.swift"
+                  timestampString = "477328353.624085"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "20">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "CustomCamera.ViewController.init (CustomCamera.ViewController.Type)(nibName : Swift.Optional&lt;Swift.String&gt;, bundle : Swift.Optional&lt;__ObjC.NSBundle&gt;) -&gt; CustomCamera.ViewController"
+                  moduleName = "CustomCamera"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/miaozhewen/Downloads/GIT/PortableDetector_main/CustomCamera/CustomCamera/ViewController.swift"
+                  timestampString = "477328353.62423"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "16"
+                  endingLineNumber = "16"
+                  offsetFromSymbolStart = "76">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "CustomCamera.ViewController.init (CustomCamera.ViewController.Type)(coder : __ObjC.NSCoder) -&gt; Swift.Optional&lt;CustomCamera.ViewController&gt;"
+                  moduleName = "CustomCamera"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/miaozhewen/Downloads/GIT/PortableDetector_main/CustomCamera/CustomCamera/ViewController.swift"
+                  timestampString = "477328353.624359"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "16"
+                  endingLineNumber = "16"
+                  offsetFromSymbolStart = "36">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>

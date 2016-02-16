@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="CustomCamera" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zq0-qm-87g">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <variation key="heightClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="400"/>
+                                </variation>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZlJ-hG-E1Q">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fYT-Ki-iA3">
+                                        <rect key="frame" x="277" y="420" width="46" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="46" id="gjq-8X-YUW"/>
+                                        </constraints>
+                                        <state key="normal" title="snap"/>
+                                        <variation key="heightClass=compact" fixedFrame="YES">
+                                            <rect key="frame" x="283" y="298" width="34" height="30"/>
+                                        </variation>
+                                        <connections>
+                                            <action selector="captureButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="XBe-8y-Wgr"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PfR-IU-RNp">
+                                        <rect key="frame" x="277" y="520" width="46" height="30"/>
+                                        <state key="normal" title="flash"/>
+                                        <variation key="heightClass=compact" fixedFrame="YES">
+                                            <rect key="frame" x="283" y="343" width="34" height="30"/>
+                                        </variation>
+                                        <connections>
+                                            <action selector="flashButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="GV1-ei-9eN"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="PfR-IU-RNp" firstAttribute="top" secondItem="fYT-Ki-iA3" secondAttribute="bottom" constant="70" id="0yh-h1-UWW"/>
+                                    <constraint firstAttribute="bottom" secondItem="PfR-IU-RNp" secondAttribute="bottom" constant="50" id="2g8-0K-puz"/>
+                                    <constraint firstItem="fYT-Ki-iA3" firstAttribute="trailing" secondItem="PfR-IU-RNp" secondAttribute="trailing" id="DGo-A1-VR4"/>
+                                    <constraint firstItem="PfR-IU-RNp" firstAttribute="leading" secondItem="fYT-Ki-iA3" secondAttribute="leading" id="cGZ-MH-bVJ"/>
+                                    <constraint firstItem="fYT-Ki-iA3" firstAttribute="centerX" secondItem="ZlJ-hG-E1Q" secondAttribute="centerX" id="qR4-dW-Gtc"/>
+                                </constraints>
+                                <variation key="heightClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="400"/>
+                                </variation>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstItem="zq0-qm-87g" firstAttribute="top" secondItem="ZlJ-hG-E1Q" secondAttribute="top" id="939-aw-oXq"/>
+                            <constraint firstItem="ZlJ-hG-E1Q" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="KFj-Xa-iJA"/>
+                            <constraint firstItem="ZlJ-hG-E1Q" firstAttribute="bottom" secondItem="wfy-db-euE" secondAttribute="top" id="NBW-Dh-xqq"/>
+                            <constraint firstItem="zq0-qm-87g" firstAttribute="trailing" secondItem="ZlJ-hG-E1Q" secondAttribute="trailing" id="b0K-BI-od0"/>
+                            <constraint firstItem="zq0-qm-87g" firstAttribute="bottom" secondItem="wfy-db-euE" secondAttribute="top" id="bR9-Fd-lGw"/>
+                            <constraint firstItem="ZlJ-hG-E1Q" firstAttribute="leading" secondItem="zq0-qm-87g" secondAttribute="leading" id="m00-oY-ePh"/>
+                            <constraint firstAttribute="trailing" secondItem="ZlJ-hG-E1Q" secondAttribute="trailing" id="zLt-Ir-dZ8"/>
+                            <constraint firstItem="ZlJ-hG-E1Q" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="zv4-Ur-cFi"/>
+                        </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="4Ml-4L-9T2" appends="YES" id="TOE-Pk-q8B"/>
+                        </connections>
+                    </view>
+                    <connections>
+                        <outlet property="overlay" destination="ZlJ-hG-E1Q" id="v3b-J6-Z4T"/>
+                        <outlet property="preview" destination="zq0-qm-87g" id="PZR-Ta-Qfg"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <pinchGestureRecognizer id="4Ml-4L-9T2"/>
+            </objects>
+            <point key="canvasLocation" x="480" y="267"/>
+        </scene>
+    </scenes>
+</document>
