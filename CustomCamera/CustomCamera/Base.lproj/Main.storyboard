@@ -18,20 +18,18 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zq0-qm-87g">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <rect key="frame" x="0.0" y="20" width="600" height="580"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <gestureRecognizers/>
                                 <variation key="heightClass=compact" fixedFrame="YES">
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="400"/>
                                 </variation>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZlJ-hG-E1Q">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <rect key="frame" x="0.0" y="20" width="600" height="580"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fYT-Ki-iA3">
-                                        <rect key="frame" x="277" y="420" width="46" height="30"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="46" id="gjq-8X-YUW"/>
-                                        </constraints>
+                                        <rect key="frame" x="283" y="530" width="34" height="30"/>
                                         <state key="normal" title="snap"/>
                                         <variation key="heightClass=compact" fixedFrame="YES">
                                             <rect key="frame" x="283" y="298" width="34" height="30"/>
@@ -41,7 +39,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PfR-IU-RNp">
-                                        <rect key="frame" x="277" y="520" width="46" height="30"/>
+                                        <rect key="frame" x="283" y="500" width="34" height="30"/>
                                         <state key="normal" title="flash"/>
                                         <variation key="heightClass=compact" fixedFrame="YES">
                                             <rect key="frame" x="283" y="343" width="34" height="30"/>
@@ -52,40 +50,44 @@
                                     </button>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstItem="PfR-IU-RNp" firstAttribute="top" secondItem="fYT-Ki-iA3" secondAttribute="bottom" constant="70" id="0yh-h1-UWW"/>
-                                    <constraint firstAttribute="bottom" secondItem="PfR-IU-RNp" secondAttribute="bottom" constant="50" id="2g8-0K-puz"/>
-                                    <constraint firstItem="fYT-Ki-iA3" firstAttribute="trailing" secondItem="PfR-IU-RNp" secondAttribute="trailing" id="DGo-A1-VR4"/>
-                                    <constraint firstItem="PfR-IU-RNp" firstAttribute="leading" secondItem="fYT-Ki-iA3" secondAttribute="leading" id="cGZ-MH-bVJ"/>
-                                    <constraint firstItem="fYT-Ki-iA3" firstAttribute="centerX" secondItem="ZlJ-hG-E1Q" secondAttribute="centerX" id="qR4-dW-Gtc"/>
+                                    <constraint firstAttribute="bottom" secondItem="PfR-IU-RNp" secondAttribute="bottom" constant="50" id="IiH-hG-qTB"/>
+                                    <constraint firstItem="PfR-IU-RNp" firstAttribute="centerX" secondItem="ZlJ-hG-E1Q" secondAttribute="centerX" id="LHP-Ol-Xeb"/>
+                                    <constraint firstItem="fYT-Ki-iA3" firstAttribute="centerX" secondItem="ZlJ-hG-E1Q" secondAttribute="centerX" id="mnI-kf-nPH"/>
+                                    <constraint firstAttribute="bottom" secondItem="fYT-Ki-iA3" secondAttribute="bottom" constant="20" id="uaI-Pf-Bui"/>
                                 </constraints>
                                 <variation key="heightClass=compact" fixedFrame="YES">
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="400"/>
                                 </variation>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="4Ml-4L-9T2" appends="YES" id="pAg-QJ-Tve"/>
+                                </connections>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                         <gestureRecognizers/>
                         <constraints>
-                            <constraint firstItem="zq0-qm-87g" firstAttribute="top" secondItem="ZlJ-hG-E1Q" secondAttribute="top" id="939-aw-oXq"/>
-                            <constraint firstItem="ZlJ-hG-E1Q" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="KFj-Xa-iJA"/>
-                            <constraint firstItem="ZlJ-hG-E1Q" firstAttribute="bottom" secondItem="wfy-db-euE" secondAttribute="top" id="NBW-Dh-xqq"/>
-                            <constraint firstItem="zq0-qm-87g" firstAttribute="trailing" secondItem="ZlJ-hG-E1Q" secondAttribute="trailing" id="b0K-BI-od0"/>
-                            <constraint firstItem="zq0-qm-87g" firstAttribute="bottom" secondItem="wfy-db-euE" secondAttribute="top" id="bR9-Fd-lGw"/>
-                            <constraint firstItem="ZlJ-hG-E1Q" firstAttribute="leading" secondItem="zq0-qm-87g" secondAttribute="leading" id="m00-oY-ePh"/>
-                            <constraint firstAttribute="trailing" secondItem="ZlJ-hG-E1Q" secondAttribute="trailing" id="zLt-Ir-dZ8"/>
-                            <constraint firstItem="ZlJ-hG-E1Q" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="zv4-Ur-cFi"/>
+                            <constraint firstItem="zq0-qm-87g" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="9vP-HY-whC"/>
+                            <constraint firstItem="ZlJ-hG-E1Q" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="ADh-qX-GbT"/>
+                            <constraint firstItem="ZlJ-hG-E1Q" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailing" id="Aoj-KR-JRp"/>
+                            <constraint firstItem="ZlJ-hG-E1Q" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="C19-xH-o2N"/>
+                            <constraint firstItem="zq0-qm-87g" firstAttribute="bottom" secondItem="wfy-db-euE" secondAttribute="top" id="H9q-N9-GbL"/>
+                            <constraint firstItem="ZlJ-hG-E1Q" firstAttribute="bottom" secondItem="wfy-db-euE" secondAttribute="top" id="IVG-rr-3so"/>
+                            <constraint firstItem="zq0-qm-87g" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="QGV-eT-HI2"/>
+                            <constraint firstItem="zq0-qm-87g" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailing" id="YVh-0w-W6X"/>
                         </constraints>
-                        <connections>
-                            <outletCollection property="gestureRecognizers" destination="4Ml-4L-9T2" appends="YES" id="TOE-Pk-q8B"/>
-                        </connections>
                     </view>
+                    <extendedEdge key="edgesForExtendedLayout" top="YES"/>
                     <connections>
                         <outlet property="overlay" destination="ZlJ-hG-E1Q" id="v3b-J6-Z4T"/>
                         <outlet property="preview" destination="zq0-qm-87g" id="PZR-Ta-Qfg"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
-                <pinchGestureRecognizer id="4Ml-4L-9T2"/>
+                <pinchGestureRecognizer id="4Ml-4L-9T2">
+                    <connections>
+                        <action selector="pinchGestureRecognizer:" destination="BYZ-38-t0r" id="0C2-Vj-vhr"/>
+                    </connections>
+                </pinchGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="480" y="267"/>
         </scene>

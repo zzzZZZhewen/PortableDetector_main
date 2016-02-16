@@ -25,6 +25,7 @@ class ViewController: UIViewController {
     var captureSession: AVCaptureSession? // to coordinate the data flow from the input to the output
     var videoPreviewLayer: AVCaptureVideoPreviewLayer? // (a subclass of CALayer). To show the user a preview of what the camera is recording
     
+    var lastPinchDistance: CGFloat!
     
     
     override func viewDidLoad() {
@@ -55,9 +56,31 @@ class ViewController: UIViewController {
     }
     
     @IBAction func flashButtonTapped(sender: AnyObject) {
-        
+        self.switchFlashMode()
     }
     
+    @IBAction func pinchGestureRecognizer(sender: UIPinchGestureRecognizer) {
+        if sender.numberOfTouches() != 2 {
+            return
+        }
+        
+        let point0 = sender.locationOfTouch(0, inView: self.overlay)
+        let point1 = sender.locationOfTouch(1, inView: self.overlay)
+        let distanceX = point0.x - point1.x
+        let distanceY = point0.y - point1.y
+        let distance = sqrt(distanceX * distanceX + distanceY * distanceY)
+        
+        if sender.state == UIGestureRecognizerState.Began {
+            lastPinchDistance = distance
+        }
+        
+        let change = (distance - self.lastPinchDistance) / CGRectGetWidth(self.view.bounds)
+        
+        zoomCamera(change)
+        
+        lastPinchDistance = distance
+        
+    }
 ///  设置会话
     func setupCaptureSession() {
         //1 创建会话
@@ -86,7 +109,10 @@ class ViewController: UIViewController {
             //其实更好的实现是自定义一个View并在layerClass方法中返回AVCaptureVideoPreviewLayer类型
             self.videoPreviewLayer = AVCaptureVideoPreviewLayer(session: self.captureSession)
             setPreviewOrientationWithToInterfaceOrientation(UIApplication.sharedApplication().statusBarOrientation)
-            self.videoPreviewLayer?.frame = self.preview.bounds;
+            
+            
+            self.videoPreviewLayer?.frame = self.preview.bounds
+            
             self.videoPreviewLayer?.videoGravity = AVLayerVideoGravityResize
             if let layer = videoPreviewLayer {
                 
@@ -106,6 +132,7 @@ class ViewController: UIViewController {
     }
     
     override func willRotateToInterfaceOrientation(toInterfaceOrientation: UIInterfaceOrientation, duration: NSTimeInterval) {
+        
         setPreviewOrientationWithToInterfaceOrientation(toInterfaceOrientation)
         
     }
@@ -153,5 +180,36 @@ class ViewController: UIViewController {
         }
     }
     
+    func switchFlashMode() {
+        if let device = self.captureDevice {
+            if device.flashActive {
+                setFlashMode(AVCaptureFlashMode.Off)
+            } else {
+                setFlashMode(AVCaptureFlashMode.On)
+            }
+        }
+    }
+    
+    func setFlashMode(mode: AVCaptureFlashMode) {
+        if self.captureDevice!.isFlashModeSupported(mode) {
+            if let _ = try?self.captureDevice?.lockForConfiguration() {
+                self.captureDevice?.flashMode = mode
+                self.captureDevice?.unlockForConfiguration()
+            }
+        }
+    }
+    
+    func zoomCamera(change: CGFloat) {
+        
+        if let device = self.captureDevice {
+            if let _  = try?device.lockForConfiguration() {
+                let factor = device.videoZoomFactor
+                let scale = min(max(factor + change * 1.5, 1.0), device.activeFormat.videoMaxZoomFactor)
+                device.videoZoomFactor = scale
+                print(scale)
+                device.unlockForConfiguration()
+            }
+        }
+    }
 }
 
