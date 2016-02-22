@@ -41,7 +41,7 @@ class StatusRecordModel : NSObject {
         //下层的代理是自己
         dataManager.delegate = self
         //给下层发消息调用服务
-        dataManager.readingFile()
+//        dataManager.readingFile()
     }
     
     

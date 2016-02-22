@@ -24,33 +24,33 @@ class StatusRecordDataManager {
     
     
 //MARK - services
-    func readingFile() {
-    
-        // case 开始拍照
-        // dispatch
-            // 
-        let picName = TNiOSHelper.getDocumentsPath().stringByAppendingString("pic.png")
-        
-        CameraManager.sharedManager.addDidShootCompletedHandeler { (result, error) -> () in
-            let answer = result as! Bool
-            //拍照成功
-            if answer {
-                PlateManager.sharedManager.analyseWithName(picName)
-            }
-        }
-        
-        PlateManager.sharedManager.addDidAnalyseCompletedHandeler { (result, error) -> () in
-            //得到车牌字符串
-            let plateString = result as! String
-            self.delegate.didGetPlateString(plateString)
-        }
-        
-        CameraManager.sharedManager.shootWithName(picName)
-            //
-        // end dispatch
-        // end case
-    }
-    
-//MARK - getters
-    
+//    func readingFile() {
+//    
+//        // case 开始拍照
+//        // dispatch
+//            // 
+//        let picName = TNiOSHelper.getDocumentsPath().stringByAppendingString("pic.png")
+//        
+//        CameraManager.sharedManager.addDidShootCompletedHandeler { (result, error) -> () in
+//            let answer = result as! Bool
+//            //拍照成功
+//            if answer {
+//                PlateManager.sharedManager.analyseWithName(picName)
+//            }
+//        }
+//        
+//        PlateManager.sharedManager.addDidAnalyseCompletedHandeler { (result, error) -> () in
+//            //得到车牌字符串
+//            let plateString = result as! String
+//            self.delegate.didGetPlateString(plateString)
+//        }
+//        
+//        CameraManager.sharedManager.shootWithName(picName)
+//            //
+//        // end dispatch
+//        // end case
+//    }
+//    
+////MARK - getters
+//    
 }

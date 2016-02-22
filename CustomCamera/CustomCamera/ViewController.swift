@@ -45,6 +45,8 @@ class ViewController: UIViewController {
     @IBAction func captureButtonTapped(sender: AnyObject) {
         // 1.获得连接
         let captureConnection = self.stillImageOutput?.connectionWithMediaType(AVMediaTypeVideo)
+        // 控制拍照出来的方向
+        captureConnection?.videoOrientation = .LandscapeRight
         // 2.拍摄照片
         self.stillImageOutput?.captureStillImageAsynchronouslyFromConnection(captureConnection, completionHandler: { (imageDataBuffer, error) -> Void in
             let imageData = AVCaptureStillImageOutput.jpegStillImageNSDataRepresentation(imageDataBuffer)
@@ -111,9 +113,9 @@ class ViewController: UIViewController {
             setPreviewOrientationWithToInterfaceOrientation(UIApplication.sharedApplication().statusBarOrientation)
             
             
+            self.videoPreviewLayer?.videoGravity = AVLayerVideoGravityResizeAspectFill
             self.videoPreviewLayer?.frame = self.preview.bounds
             
-            self.videoPreviewLayer?.videoGravity = AVLayerVideoGravityResize
             if let layer = videoPreviewLayer {
                 
                 self.preview.layer.addSublayer(layer)

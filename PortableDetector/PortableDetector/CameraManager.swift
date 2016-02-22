@@ -25,16 +25,16 @@ class CameraManager {
         //
         //
         //告诉调用者，事情已经办完了
-        self.didShootCompletedHandeler(result: true, error: nil)
+//        self.didShootCompletedHandeler(result: true, error: nil)
     }
     
 //MARK - handler
-    var didShootCompletedHandeler : ManagerMissionCompletedCloureWithResultError = {(result : AnyObject?, error : ErrorType?) -> () in return}
-    
-    // set handler
-    func addDidShootCompletedHandeler (handler : ManagerMissionCompletedCloureWithResultError!) {
-        self.didShootCompletedHandeler = handler
-    }
-
-    
+//    var didShootCompletedHandeler : ManagerMissionCompletedCloureWithResultError = {(result : AnyObject?, error : ErrorType?) -> () in return}
+//    
+//    // set handler
+//    func addDidShootCompletedHandeler (handler : ManagerMissionCompletedCloureWithResultError!) {
+//        self.didShootCompletedHandeler = handler
+//    }
+//
+//    
 }

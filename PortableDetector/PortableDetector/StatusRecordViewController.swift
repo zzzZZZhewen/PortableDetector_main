@@ -24,7 +24,7 @@
 
 import UIKit
 import AVFoundation
-
+import SQLite
 
 /// 主页面，用来显示检测状态（status）和最近一条记录（record）
 /// 业务逻辑在 StatusRecordModel中实现

@@ -15,7 +15,7 @@ protocol RecordsModelDelegate {
 
 //MARK - class
 //查询页面的业务逻辑，保存很多记录for TableView
-class RecordsModel : CoreModel {
+class RecordsModel  {
     
     //MARK - getters
     //上层代理

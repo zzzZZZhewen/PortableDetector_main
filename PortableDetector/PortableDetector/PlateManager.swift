@@ -23,16 +23,16 @@ class PlateManager {
         //
         //
         //告诉调用者，事情已经办完了
-        self.didAnalyseCompletedHandeler(result: nil, error: nil)
+//        self.didAnalyseCompletedHandeler(result: nil, error: nil)
     }
     
     
     //MARK - handler
-    var didAnalyseCompletedHandeler : ManagerMissionCompletedCloureWithResultError = {(result : AnyObject?, error : ErrorType?) -> () in return}
-    
-    // set handler
-    func addDidAnalyseCompletedHandeler (handler : ManagerMissionCompletedCloureWithResultError!) {
-        self.didAnalyseCompletedHandeler = handler
-    }
+//    var didAnalyseCompletedHandeler : ManagerMissionCompletedCloureWithResultError = {(result : AnyObject?, error : ErrorType?) -> () in return}
+//    
+//    // set handler
+//    func addDidAnalyseCompletedHandeler (handler : ManagerMissionCompletedCloureWithResultError!) {
+//        self.didAnalyseCompletedHandeler = handler
+//    }
     
 }
