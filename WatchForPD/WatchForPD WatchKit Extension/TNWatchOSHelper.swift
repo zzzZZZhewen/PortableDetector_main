@@ -9,7 +9,7 @@
 import WatchKit
 
 class TNWatchOSHelper: NSObject {
-
+    
 }
 
 public enum TNFontIcon : String {

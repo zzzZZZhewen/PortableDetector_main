@@ -7,20 +7,33 @@
 //
 
 import UIKit
+import AVFoundation
 
 class StatusViewController: UIViewController {
-
+    
+    var viewModel: StatusViewModel!
+    
     @IBOutlet weak var balanceAIcon: UIImageView!
     @IBOutlet weak var balanceBIcon: UIImageView!
     @IBOutlet weak var instrumentIcon: UIImageView!
     @IBOutlet weak var automobileIcon: UIImageView!
-    
-    
+    @IBOutlet weak var cameraPreview: UIView!
+    @IBOutlet weak var lastRecordPlate: UIImageView!
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        viewModel = StatusViewModel(delegate: self)
         self.setIcons()
-        
+        //self.setCamera()
+    }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+
+        if let previewLayer = viewModel.cameraController?.videoPreviewLayer {
+            previewLayer.frame = cameraPreview.bounds
+            previewLayer.connection.videoOrientation = AVCaptureVideoOrientation(rawValue: UIDevice.currentDevice().orientation.rawValue)!
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -40,6 +53,11 @@ class StatusViewController: UIViewController {
     */
     
     
+    @IBAction func startButtonTappedInside(sender: AnyObject) {
+        self.viewModel.shoot()
+    }
+    
+    
     // MARK: - private
     
     func setIcons() {
@@ -48,4 +66,19 @@ class StatusViewController: UIViewController {
         self.instrumentIcon.tintColor = UIColor(red: 57/255, green: 177/255, blue: 198/255, alpha: 1.0)
         self.automobileIcon.tintColor = UIColor(red: 57/255, green: 177/255, blue: 198/255, alpha: 1.0)
     }
+    
+    func setCamera() {
+        viewModel.initCameraController()
+        if let previewLayer = viewModel.cameraController.videoPreviewLayer {
+            previewLayer.frame = cameraPreview.bounds
+            cameraPreview.layer.addSublayer(previewLayer)
+        }
+    }
 }
+
+extension StatusViewController: StatusViewModelDelegate {
+    func statusViewModel(viewModel:StatusViewModel, didShootSucceededWithImage image: UIImage) {
+        lastRecordPlate.image = image
+    }
+}
+
