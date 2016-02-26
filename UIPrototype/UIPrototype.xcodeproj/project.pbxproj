@@ -17,6 +17,7 @@
 		8194FD6F1C7456C00094BB21 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8194FD6D1C7456C00094BB21 /* LaunchScreen.storyboard */; };
 		81B8D4621C7E881E009AFB91 /* RecordsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81B8D4611C7E881E009AFB91 /* RecordsTableViewCell.swift */; };
 		81C4B4BA1C75C24300079609 /* theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81C4B4B91C75C24300079609 /* theme.swift */; };
+		81D858761C7FEF0400E0E3E0 /* ysocket.framework in Copy Files */ = {isa = PBXBuildFile; fileRef = 81D858731C7FEEF400E0E3E0 /* ysocket.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		81EB71BE1C7EACAA008B0390 /* DBAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81EB71BC1C7EACAA008B0390 /* DBAdapter.swift */; };
 		81EB71BF1C7EACAA008B0390 /* DBHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81EB71BD1C7EACAA008B0390 /* DBHelper.swift */; };
 		81EB71C51C7ED89E008B0390 /* SingleRecordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81EB71C41C7ED89E008B0390 /* SingleRecordViewController.swift */; };
@@ -50,29 +51,27 @@
 		81EEEC021C7EFFE500658B9E /* TNiOSHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81EEEC011C7EFFE500658B9E /* TNiOSHelper.swift */; };
 		81EEEC141C7F0FEA00658B9E /* TNClientSocket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81EEEC131C7F0FEA00658B9E /* TNClientSocket.swift */; };
 		81EEEC161C7F101500658B9E /* DeviceStatusDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81EEEC151C7F101500658B9E /* DeviceStatusDataModel.swift */; };
-		81EEEC2A1C7F19A100658B9E /* ysocket.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 81EEEC261C7F198600658B9E /* ysocket.framework */; };
-		81EEEC2C1C7F19C200658B9E /* ysocket.framework in Copy Files */ = {isa = PBXBuildFile; fileRef = 81EEEC261C7F198600658B9E /* ysocket.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		886F038212A9B0C74C05602C /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C867566B769B2566A5B1F56C /* Pods.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		81EEEC231C7F198600658B9E /* PBXContainerItemProxy */ = {
+		81D858701C7FEEF400E0E3E0 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 81EEEC1D1C7F198600658B9E /* SwiftSocket.xcodeproj */;
+			containerPortal = 81D8586A1C7FEEF400E0E3E0 /* SwiftSocket.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = 5518C82F19A329100049DC22;
 			remoteInfo = SwiftSocket;
 		};
-		81EEEC251C7F198600658B9E /* PBXContainerItemProxy */ = {
+		81D858721C7FEEF400E0E3E0 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 81EEEC1D1C7F198600658B9E /* SwiftSocket.xcodeproj */;
+			containerPortal = 81D8586A1C7FEEF400E0E3E0 /* SwiftSocket.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = D43083871A565F7F004DE4D4;
 			remoteInfo = ysocket;
 		};
-		81EEEC271C7F198600658B9E /* PBXContainerItemProxy */ = {
+		81D858741C7FEEF400E0E3E0 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 81EEEC1D1C7F198600658B9E /* SwiftSocket.xcodeproj */;
+			containerPortal = 81D8586A1C7FEEF400E0E3E0 /* SwiftSocket.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = D4F0E4051A5661260085C247;
 			remoteInfo = ysocketOSX;
@@ -86,7 +85,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				81EEEC2C1C7F19C200658B9E /* ysocket.framework in Copy Files */,
+				81D858761C7FEF0400E0E3E0 /* ysocket.framework in Copy Files */,
 			);
 			name = "Copy Files";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -106,6 +105,7 @@
 		8194FD701C7456C00094BB21 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		81B8D4611C7E881E009AFB91 /* RecordsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordsTableViewCell.swift; sourceTree = "<group>"; };
 		81C4B4B91C75C24300079609 /* theme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = theme.swift; sourceTree = "<group>"; };
+		81D8586A1C7FEEF400E0E3E0 /* SwiftSocket.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SwiftSocket.xcodeproj; path = "SwiftSocket-master/SwiftSocket.xcodeproj"; sourceTree = "<group>"; };
 		81EB71BC1C7EACAA008B0390 /* DBAdapter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DBAdapter.swift; sourceTree = "<group>"; };
 		81EB71BD1C7EACAA008B0390 /* DBHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DBHelper.swift; sourceTree = "<group>"; };
 		81EB71C41C7ED89E008B0390 /* SingleRecordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SingleRecordViewController.swift; sourceTree = "<group>"; };
@@ -162,7 +162,6 @@
 		81EEEC131C7F0FEA00658B9E /* TNClientSocket.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TNClientSocket.swift; sourceTree = "<group>"; };
 		81EEEC151C7F101500658B9E /* DeviceStatusDataModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviceStatusDataModel.swift; sourceTree = "<group>"; };
 		81EEEC191C7F178C00658B9E /* ysocket.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ysocket.framework; path = "UIPrototype/SwiftSocket-master/build/Debug-iphoneos/ysocket.framework"; sourceTree = "<group>"; };
-		81EEEC1D1C7F198600658B9E /* SwiftSocket.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SwiftSocket.xcodeproj; path = "SwiftSocket-master/SwiftSocket.xcodeproj"; sourceTree = "<group>"; };
 		C867566B769B2566A5B1F56C /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D95C9851E2D6D811E535E2F2 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		EBC2DA1571A54E28E88DC6EA /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
@@ -173,7 +172,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				81EEEC2A1C7F19A100658B9E /* ysocket.framework in Frameworks */,
 				81EB721D1C7EFA9F008B0390 /* libturbojpeg.a in Frameworks */,
 				81EB721E1C7EFA9F008B0390 /* opencv2.framework in Frameworks */,
 				886F038212A9B0C74C05602C /* Pods.framework in Frameworks */,
@@ -297,6 +295,16 @@
 			path = UIPrototype;
 			sourceTree = "<group>";
 		};
+		81D8586B1C7FEEF400E0E3E0 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				81D858711C7FEEF400E0E3E0 /* SwiftSocket */,
+				81D858731C7FEEF400E0E3E0 /* ysocket.framework */,
+				81D858751C7FEEF400E0E3E0 /* ysocketOSX.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		81EB71C81C7EE61A008B0390 /* SingleRecord */ = {
 			isa = PBXGroup;
 			children = (
@@ -308,6 +316,7 @@
 		81EB71CB1C7EF6C0008B0390 /* Plate */ = {
 			isa = PBXGroup;
 			children = (
+				81D8586A1C7FEEF400E0E3E0 /* SwiftSocket.xcodeproj */,
 				81EB721F1C7EFAC3008B0390 /* UIPrototype-Bridging-Header.h */,
 				81EB72201C7EFAC4008B0390 /* bridge */,
 				81EB722A1C7EFAC4008B0390 /* core */,
@@ -420,20 +429,9 @@
 		81EEEC061C7F0FC300658B9E /* Socket */ = {
 			isa = PBXGroup;
 			children = (
-				81EEEC1D1C7F198600658B9E /* SwiftSocket.xcodeproj */,
 				81EEEC131C7F0FEA00658B9E /* TNClientSocket.swift */,
 			);
 			name = Socket;
-			sourceTree = "<group>";
-		};
-		81EEEC1E1C7F198600658B9E /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				81EEEC241C7F198600658B9E /* SwiftSocket */,
-				81EEEC261C7F198600658B9E /* ysocket.framework */,
-				81EEEC281C7F198600658B9E /* ysocketOSX.framework */,
-			);
-			name = Products;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -489,8 +487,8 @@
 			projectDirPath = "";
 			projectReferences = (
 				{
-					ProductGroup = 81EEEC1E1C7F198600658B9E /* Products */;
-					ProjectRef = 81EEEC1D1C7F198600658B9E /* SwiftSocket.xcodeproj */;
+					ProductGroup = 81D8586B1C7FEEF400E0E3E0 /* Products */;
+					ProjectRef = 81D8586A1C7FEEF400E0E3E0 /* SwiftSocket.xcodeproj */;
 				},
 			);
 			projectRoot = "";
@@ -501,25 +499,25 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
-		81EEEC241C7F198600658B9E /* SwiftSocket */ = {
+		81D858711C7FEEF400E0E3E0 /* SwiftSocket */ = {
 			isa = PBXReferenceProxy;
 			fileType = "compiled.mach-o.executable";
 			path = SwiftSocket;
-			remoteRef = 81EEEC231C7F198600658B9E /* PBXContainerItemProxy */;
+			remoteRef = 81D858701C7FEEF400E0E3E0 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		81EEEC261C7F198600658B9E /* ysocket.framework */ = {
+		81D858731C7FEEF400E0E3E0 /* ysocket.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
 			path = ysocket.framework;
-			remoteRef = 81EEEC251C7F198600658B9E /* PBXContainerItemProxy */;
+			remoteRef = 81D858721C7FEEF400E0E3E0 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		81EEEC281C7F198600658B9E /* ysocketOSX.framework */ = {
+		81D858751C7FEEF400E0E3E0 /* ysocketOSX.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
 			path = ysocketOSX.framework;
-			remoteRef = 81EEEC271C7F198600658B9E /* PBXContainerItemProxy */;
+			remoteRef = 81D858741C7FEEF400E0E3E0 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
