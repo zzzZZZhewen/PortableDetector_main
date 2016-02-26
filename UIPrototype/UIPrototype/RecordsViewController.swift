@@ -312,7 +312,10 @@ extension RecordsViewController: UITableViewDelegate, UITableViewDataSource {
             return indexPath
         }
         return nil
+        
     }
+    
+
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         if tableView == searchPanelTableView {
@@ -377,4 +380,5 @@ extension RecordsViewController: UIPickerViewDelegate, UIPickerViewDataSource {
         updateConductorName()
     }
 }
+
 

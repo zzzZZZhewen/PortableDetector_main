@@ -14,6 +14,7 @@ protocol DeviceStatusDelegate: class {
 }
 
 
+
 //上面的信息状态栏。电量，信号等
 class DeviceStatusDataModel {
     weak var delegate:DeviceStatusDelegate!
@@ -132,22 +133,22 @@ class DeviceStatusDataModel {
        
     }
 
-    var detectStatus=StatusViewController.btnStatusList.Default{
+    var detectStatus = btnStatusList.Default{
         didSet{
             switch(detectStatus){
                 
-            case StatusViewController.btnStatusList.Detecting:
+            case btnStatusList.Detecting:
                 //startDetect()
                 print("检测中")
                 recordEditEnable=false
-            case StatusViewController.btnStatusList.Analyzing:
+            case btnStatusList.Analyzing:
                 //stopDetect()
                 print("分析中")
                 recordEditEnable=false
-            case  StatusViewController.btnStatusList.AutoSaving:
+            case btnStatusList.AutoSaving:
                 recordEditEnable=true
                 print("自动保存中")
-            case  StatusViewController.btnStatusList.Saved:
+            case btnStatusList.Saved:
                 recordEditEnable=false
                 print("保存完毕")
                 //
@@ -209,7 +210,7 @@ class DeviceStatusDataModel {
                  textSpeed=array2[1]
                 textWeight=array2[2]
                  //textPlateNumber=""
-                detectStatus=StatusViewController.btnStatusList.AutoSaving//数据获取完进入保存阶段
+                detectStatus = btnStatusList.AutoSaving//数据获取完进入保存阶段
                 
             default:
                 print("")
@@ -274,17 +275,15 @@ class DeviceStatusDataModel {
     }
     
     func startSocket(){
-       
         socket.startRead()
         
     }
+    
     func startDetect(){
       
-        socket.send("cmd:2--",dowork:{
-            self.detectStatus=StatusViewController.btnStatusList.Detecting
-            }
-        )
-        
+        socket.send("cmd:2--") { () -> () in
+            self.detectStatus = btnStatusList.Detecting
+        }
         self.cameraController.shoot()
         
     }
@@ -301,14 +300,14 @@ class DeviceStatusDataModel {
     func saveRecord(){
         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0),{
             
-            self.detectStatus=StatusViewController.btnStatusList.Saved//数据获取完进入保存阶段
+            self.detectStatus = btnStatusList.Saved//数据获取完进入保存阶段
             
         })
     }
     
     func cancelDetect(){
         socket.send("cmd:5--", dowork:{
-             self.detectStatus=StatusViewController.btnStatusList.Default//数据获取完进入保存阶段
+             self.detectStatus = btnStatusList.Default//数据获取完进入保存阶段
             }
         )
         }
@@ -376,4 +375,39 @@ extension DeviceStatusDataModel: RecognizePlateDelegate {
         }
     }
 }
+
+
+enum btnStatusList:Int{
+    case Default = 0,Detecting, Analyzing, AutoSaving, Saved, Printing
+    var btnStatus:[[AnyObject]]{
+        switch self{
+        case .Default:
+            return [
+                [true,"开始"],[false,"停止"],[false,"取消"],[false,"保存"],[false,"打印"]
+            ]
+        case .Detecting:
+            return [
+                [false,"检测中"],[true,"停止"],[true,"取消"],[false,"保存"],[false,"打印"]
+            ]
+        case .Analyzing:
+            return [
+                [false,"分析中"],[false,"停止"],[true,"取消"],[false,"保存"],[false,"打印"]
+            ]
+        case .AutoSaving:
+            return [
+                [true,"开始"],[false,"停止"],[true,"取消"],[true,"保存(5)"],[false,"打印"]
+            ]
+        case .Saved:
+            return [
+                [true,"开始"],[false,"停止"],[true,"取消"],[false,"保存"],[true,"打印"]
+            ]
+        case .Printing:
+            return [
+                [true,"开始"],[false,"停止"],[false,"取消"],[false,"保存"],[false,"打印中"]
+            ]
+            
+        }
+    }
+}
+
 
