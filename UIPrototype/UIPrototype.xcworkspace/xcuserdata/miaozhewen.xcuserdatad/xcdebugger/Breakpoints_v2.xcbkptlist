@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   type = "0"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.AddressBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            symbolName = "*0x100a4c774">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "function signature specialization &lt;Arg[0] = Exploded, Arg[1] = Exploded, Arg[2] = Dead, Arg[3] = Dead&gt; of Swift._fatalErrorMessage (Swift.StaticString, Swift.StaticString, Swift.StaticString, Swift.UInt) -&gt; ()"
+                  moduleName = "libswiftCore.dylib"
+                  usesParentBreakpointCondition = "Yes"
+                  offsetFromSymbolStart = "52">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>

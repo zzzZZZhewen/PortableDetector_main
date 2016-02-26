@@ -13,10 +13,6 @@ protocol CameraControllerDelegate : class {
     func cameraController(cameraController: CameraController, didShootSucceededWithImageData imageData: NSData)
 }
 
-protocol CameraControllerProtocol {
-    var cameraController:CameraController! { get set }
-}
-
 class CameraController: NSObject {
     weak var delegate: CameraControllerDelegate?
 
@@ -47,10 +43,12 @@ class CameraController: NSObject {
                         print("权限有问题")
                     }
             })
+            break
         case .Authorized:
             
             self.setupCaptureSession()
             self.startCaptureSession()
+            break
         case .Denied, .Restricted:
             print("权限有问题")
             break
@@ -109,12 +107,11 @@ class CameraController: NSObject {
             //通知拍摄完毕
             self.delegate?.cameraController(self, didShootSucceededWithImageData: imageData)
             
-            // 保存到相册
-            //if let image = UIImage(data: imageData) {
-            //    UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil)
-            //}
+            //保存到相册
+            if let image = UIImage(data: imageData) {
+                UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil)
+            }
         })
-       
     }
     
     // MARK: - private

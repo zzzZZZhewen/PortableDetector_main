@@ -10,30 +10,162 @@
 		810E16791C7B0E1900B14351 /* CameraController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810E16781C7B0E1900B14351 /* CameraController.swift */; };
 		8135074D1C79A3BA00BF5347 /* RecordsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8135074C1C79A3BA00BF5347 /* RecordsViewController.swift */; };
 		8135074F1C79A3D200BF5347 /* StatusViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8135074E1C79A3D200BF5347 /* StatusViewController.swift */; };
-		8174E5E71C7C52EF001A8EAF /* StatusViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8174E5E61C7C52EF001A8EAF /* StatusViewModel.swift */; };
-		8174E5ED1C7C5F3E001A8EAF /* RecordDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8174E5EC1C7C5F3E001A8EAF /* RecordDataModel.swift */; };
-		8174E5F01C7C63C0001A8EAF /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8174E5EF1C7C63C0001A8EAF /* DataManager.swift */; };
+		8174E5ED1C7C5F3E001A8EAF /* DetectedRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8174E5EC1C7C5F3E001A8EAF /* DetectedRecord.swift */; };
 		8194FD651C7456C00094BB21 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8194FD641C7456C00094BB21 /* AppDelegate.swift */; };
 		8194FD6A1C7456C00094BB21 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8194FD681C7456C00094BB21 /* Main.storyboard */; };
 		8194FD6C1C7456C00094BB21 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8194FD6B1C7456C00094BB21 /* Assets.xcassets */; };
 		8194FD6F1C7456C00094BB21 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8194FD6D1C7456C00094BB21 /* LaunchScreen.storyboard */; };
+		81B8D4621C7E881E009AFB91 /* RecordsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81B8D4611C7E881E009AFB91 /* RecordsTableViewCell.swift */; };
 		81C4B4BA1C75C24300079609 /* theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81C4B4B91C75C24300079609 /* theme.swift */; };
+		81EB71BE1C7EACAA008B0390 /* DBAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81EB71BC1C7EACAA008B0390 /* DBAdapter.swift */; };
+		81EB71BF1C7EACAA008B0390 /* DBHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81EB71BD1C7EACAA008B0390 /* DBHelper.swift */; };
+		81EB71C51C7ED89E008B0390 /* SingleRecordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81EB71C41C7ED89E008B0390 /* SingleRecordViewController.swift */; };
+		81EB71C71C7EE428008B0390 /* Detector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81EB71C61C7EE428008B0390 /* Detector.swift */; };
+		81EB71CA1C7EE62C008B0390 /* SingleRecordDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81EB71C91C7EE62C008B0390 /* SingleRecordDetailTableViewCell.swift */; };
+		81EB721D1C7EFA9F008B0390 /* libturbojpeg.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 81EB721B1C7EFA9F008B0390 /* libturbojpeg.a */; };
+		81EB721E1C7EFA9F008B0390 /* opencv2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 81EB721C1C7EFA9F008B0390 /* opencv2.framework */; };
+		81EB72501C7EFAC4008B0390 /* CVWrapper.mm in Sources */ = {isa = PBXBuildFile; fileRef = 81EB72221C7EFAC4008B0390 /* CVWrapper.mm */; };
+		81EB72511C7EFAC4008B0390 /* stitching.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 81EB72231C7EFAC4008B0390 /* stitching.cpp */; };
+		81EB72521C7EFAC4008B0390 /* UIImage+OpenCV.mm in Sources */ = {isa = PBXBuildFile; fileRef = 81EB72261C7EFAC4008B0390 /* UIImage+OpenCV.mm */; };
+		81EB72531C7EFAC4008B0390 /* UIImage+Rotate.m in Sources */ = {isa = PBXBuildFile; fileRef = 81EB72281C7EFAC4008B0390 /* UIImage+Rotate.m */; };
+		81EB72541C7EFAC4008B0390 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81EB72291C7EFAC4008B0390 /* ViewController.swift */; };
+		81EB72551C7EFAC4008B0390 /* chars_identify.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 81EB722B1C7EFAC4008B0390 /* chars_identify.cpp */; };
+		81EB72561C7EFAC4008B0390 /* chars_recognise.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 81EB722C1C7EFAC4008B0390 /* chars_recognise.cpp */; };
+		81EB72571C7EFAC4008B0390 /* chars_segment.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 81EB722D1C7EFAC4008B0390 /* chars_segment.cpp */; };
+		81EB72581C7EFAC4008B0390 /* core_func.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 81EB722E1C7EFAC4008B0390 /* core_func.cpp */; };
+		81EB72591C7EFAC4008B0390 /* feature.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 81EB722F1C7EFAC4008B0390 /* feature.cpp */; };
+		81EB725A1C7EFAC4008B0390 /* plate.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 81EB72301C7EFAC4008B0390 /* plate.cpp */; };
+		81EB725B1C7EFAC4008B0390 /* plate_detect.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 81EB72311C7EFAC4008B0390 /* plate_detect.cpp */; };
+		81EB725C1C7EFAC4008B0390 /* plate_judge.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 81EB72321C7EFAC4008B0390 /* plate_judge.cpp */; };
+		81EB725D1C7EFAC4008B0390 /* plate_locate.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 81EB72331C7EFAC4008B0390 /* plate_locate.cpp */; };
+		81EB725E1C7EFAC4008B0390 /* plate_recognize.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 81EB72341C7EFAC4008B0390 /* plate_recognize.cpp */; };
+		81EB725F1C7EFAC4008B0390 /* IdentifyResult.m in Sources */ = {isa = PBXBuildFile; fileRef = 81EB72361C7EFAC4008B0390 /* IdentifyResult.m */; };
+		81EB72601C7EFAC4008B0390 /* UIImageCVMatConverter.mm in Sources */ = {isa = PBXBuildFile; fileRef = 81EB72471C7EFAC4008B0390 /* UIImageCVMatConverter.mm */; };
+		81EB72611C7EFAC4008B0390 /* ann - bak.xml in Resources */ = {isa = PBXBuildFile; fileRef = 81EB72491C7EFAC4008B0390 /* ann - bak.xml */; };
+		81EB72621C7EFAC4008B0390 /* ann.xml in Resources */ = {isa = PBXBuildFile; fileRef = 81EB724A1C7EFAC4008B0390 /* ann.xml */; };
+		81EB72631C7EFAC4008B0390 /* haarcascade_frontalface_alt_tree.xml in Resources */ = {isa = PBXBuildFile; fileRef = 81EB724B1C7EFAC4008B0390 /* haarcascade_frontalface_alt_tree.xml */; };
+		81EB72641C7EFAC4008B0390 /* haarcascade_frontalface_default.xml in Resources */ = {isa = PBXBuildFile; fileRef = 81EB724C1C7EFAC4008B0390 /* haarcascade_frontalface_default.xml */; };
+		81EB72651C7EFAC4008B0390 /* svm.xml in Resources */ = {isa = PBXBuildFile; fileRef = 81EB724D1C7EFAC4008B0390 /* svm.xml */; };
+		81EB72661C7EFAC4008B0390 /* RecognizePlate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81EB724F1C7EFAC4008B0390 /* RecognizePlate.swift */; };
+		81EEEC021C7EFFE500658B9E /* TNiOSHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81EEEC011C7EFFE500658B9E /* TNiOSHelper.swift */; };
+		81EEEC141C7F0FEA00658B9E /* TNClientSocket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81EEEC131C7F0FEA00658B9E /* TNClientSocket.swift */; };
+		81EEEC161C7F101500658B9E /* DeviceStatusDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81EEEC151C7F101500658B9E /* DeviceStatusDataModel.swift */; };
+		81EEEC2A1C7F19A100658B9E /* ysocket.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 81EEEC261C7F198600658B9E /* ysocket.framework */; };
+		81EEEC2C1C7F19C200658B9E /* ysocket.framework in Copy Files */ = {isa = PBXBuildFile; fileRef = 81EEEC261C7F198600658B9E /* ysocket.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		886F038212A9B0C74C05602C /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C867566B769B2566A5B1F56C /* Pods.framework */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		81EEEC231C7F198600658B9E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 81EEEC1D1C7F198600658B9E /* SwiftSocket.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 5518C82F19A329100049DC22;
+			remoteInfo = SwiftSocket;
+		};
+		81EEEC251C7F198600658B9E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 81EEEC1D1C7F198600658B9E /* SwiftSocket.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = D43083871A565F7F004DE4D4;
+			remoteInfo = ysocket;
+		};
+		81EEEC271C7F198600658B9E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 81EEEC1D1C7F198600658B9E /* SwiftSocket.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = D4F0E4051A5661260085C247;
+			remoteInfo = ysocketOSX;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		81EEEC2B1C7F19AB00658B9E /* Copy Files */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				81EEEC2C1C7F19C200658B9E /* ysocket.framework in Copy Files */,
+			);
+			name = "Copy Files";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		810E16781C7B0E1900B14351 /* CameraController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraController.swift; sourceTree = "<group>"; };
 		8135074C1C79A3BA00BF5347 /* RecordsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordsViewController.swift; sourceTree = "<group>"; };
 		8135074E1C79A3D200BF5347 /* StatusViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusViewController.swift; sourceTree = "<group>"; };
-		8174E5E61C7C52EF001A8EAF /* StatusViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusViewModel.swift; sourceTree = "<group>"; };
-		8174E5EC1C7C5F3E001A8EAF /* RecordDataModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordDataModel.swift; sourceTree = "<group>"; };
-		8174E5EF1C7C63C0001A8EAF /* DataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
+		8174E5EC1C7C5F3E001A8EAF /* DetectedRecord.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetectedRecord.swift; sourceTree = "<group>"; };
 		8194FD611C7456C00094BB21 /* UIPrototype.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UIPrototype.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8194FD641C7456C00094BB21 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8194FD691C7456C00094BB21 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		8194FD6B1C7456C00094BB21 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8194FD6E1C7456C00094BB21 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8194FD701C7456C00094BB21 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		81B8D4611C7E881E009AFB91 /* RecordsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordsTableViewCell.swift; sourceTree = "<group>"; };
 		81C4B4B91C75C24300079609 /* theme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = theme.swift; sourceTree = "<group>"; };
+		81EB71BC1C7EACAA008B0390 /* DBAdapter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DBAdapter.swift; sourceTree = "<group>"; };
+		81EB71BD1C7EACAA008B0390 /* DBHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DBHelper.swift; sourceTree = "<group>"; };
+		81EB71C41C7ED89E008B0390 /* SingleRecordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SingleRecordViewController.swift; sourceTree = "<group>"; };
+		81EB71C61C7EE428008B0390 /* Detector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Detector.swift; sourceTree = "<group>"; };
+		81EB71C91C7EE62C008B0390 /* SingleRecordDetailTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SingleRecordDetailTableViewCell.swift; sourceTree = "<group>"; };
+		81EB72161C7EF9BF008B0390 /* opencv2.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = opencv2.framework; path = UIPrototype/opencv2.framework; sourceTree = "<group>"; };
+		81EB72171C7EF9BF008B0390 /* libturbojpeg.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libturbojpeg.a; path = UIPrototype/libturbojpeg.a; sourceTree = "<group>"; };
+		81EB721B1C7EFA9F008B0390 /* libturbojpeg.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libturbojpeg.a; path = UIPrototype/RecognizePlateRequire/libturbojpeg.a; sourceTree = "<group>"; };
+		81EB721C1C7EFA9F008B0390 /* opencv2.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = opencv2.framework; path = UIPrototype/RecognizePlateRequire/opencv2.framework; sourceTree = "<group>"; };
+		81EB721F1C7EFAC3008B0390 /* UIPrototype-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIPrototype-Bridging-Header.h"; sourceTree = "<group>"; };
+		81EB72211C7EFAC4008B0390 /* CVWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CVWrapper.h; sourceTree = "<group>"; };
+		81EB72221C7EFAC4008B0390 /* CVWrapper.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = CVWrapper.mm; sourceTree = "<group>"; };
+		81EB72231C7EFAC4008B0390 /* stitching.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = stitching.cpp; sourceTree = "<group>"; };
+		81EB72241C7EFAC4008B0390 /* stitching.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = stitching.h; sourceTree = "<group>"; };
+		81EB72251C7EFAC4008B0390 /* UIImage+OpenCV.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+OpenCV.h"; sourceTree = "<group>"; };
+		81EB72261C7EFAC4008B0390 /* UIImage+OpenCV.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = "UIImage+OpenCV.mm"; sourceTree = "<group>"; };
+		81EB72271C7EFAC4008B0390 /* UIImage+Rotate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Rotate.h"; sourceTree = "<group>"; };
+		81EB72281C7EFAC4008B0390 /* UIImage+Rotate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Rotate.m"; sourceTree = "<group>"; };
+		81EB72291C7EFAC4008B0390 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		81EB722B1C7EFAC4008B0390 /* chars_identify.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = chars_identify.cpp; sourceTree = "<group>"; };
+		81EB722C1C7EFAC4008B0390 /* chars_recognise.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = chars_recognise.cpp; sourceTree = "<group>"; };
+		81EB722D1C7EFAC4008B0390 /* chars_segment.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = chars_segment.cpp; sourceTree = "<group>"; };
+		81EB722E1C7EFAC4008B0390 /* core_func.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = core_func.cpp; sourceTree = "<group>"; };
+		81EB722F1C7EFAC4008B0390 /* feature.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = feature.cpp; sourceTree = "<group>"; };
+		81EB72301C7EFAC4008B0390 /* plate.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = plate.cpp; sourceTree = "<group>"; };
+		81EB72311C7EFAC4008B0390 /* plate_detect.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = plate_detect.cpp; sourceTree = "<group>"; };
+		81EB72321C7EFAC4008B0390 /* plate_judge.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = plate_judge.cpp; sourceTree = "<group>"; };
+		81EB72331C7EFAC4008B0390 /* plate_locate.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = plate_locate.cpp; sourceTree = "<group>"; };
+		81EB72341C7EFAC4008B0390 /* plate_recognize.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = plate_recognize.cpp; sourceTree = "<group>"; };
+		81EB72351C7EFAC4008B0390 /* IdentifyResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IdentifyResult.h; path = RecognizePlateRequire/IdentifyResult.h; sourceTree = "<group>"; };
+		81EB72361C7EFAC4008B0390 /* IdentifyResult.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = IdentifyResult.m; path = RecognizePlateRequire/IdentifyResult.m; sourceTree = "<group>"; };
+		81EB72381C7EFAC4008B0390 /* chars_identify.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = chars_identify.h; sourceTree = "<group>"; };
+		81EB72391C7EFAC4008B0390 /* chars_recognise.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = chars_recognise.h; sourceTree = "<group>"; };
+		81EB723A1C7EFAC4008B0390 /* chars_segment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = chars_segment.h; sourceTree = "<group>"; };
+		81EB723B1C7EFAC4008B0390 /* core_func.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = core_func.h; sourceTree = "<group>"; };
+		81EB723C1C7EFAC4008B0390 /* CParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CParser.h; sourceTree = "<group>"; };
+		81EB723D1C7EFAC4008B0390 /* feature.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = feature.h; sourceTree = "<group>"; };
+		81EB723E1C7EFAC4008B0390 /* plate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = plate.h; sourceTree = "<group>"; };
+		81EB723F1C7EFAC4008B0390 /* plate_detect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = plate_detect.h; sourceTree = "<group>"; };
+		81EB72401C7EFAC4008B0390 /* plate_judge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = plate_judge.h; sourceTree = "<group>"; };
+		81EB72411C7EFAC4008B0390 /* plate_locate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = plate_locate.h; sourceTree = "<group>"; };
+		81EB72421C7EFAC4008B0390 /* plate_recognize.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = plate_recognize.h; sourceTree = "<group>"; };
+		81EB72431C7EFAC4008B0390 /* prep.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = prep.h; sourceTree = "<group>"; };
+		81EB72441C7EFAC4008B0390 /* util.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = util.h; sourceTree = "<group>"; };
+		81EB72461C7EFAC4008B0390 /* UIImageCVMatConverter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIImageCVMatConverter.h; sourceTree = "<group>"; };
+		81EB72471C7EFAC4008B0390 /* UIImageCVMatConverter.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = UIImageCVMatConverter.mm; sourceTree = "<group>"; };
+		81EB72491C7EFAC4008B0390 /* ann - bak.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "ann - bak.xml"; sourceTree = "<group>"; };
+		81EB724A1C7EFAC4008B0390 /* ann.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = ann.xml; sourceTree = "<group>"; };
+		81EB724B1C7EFAC4008B0390 /* haarcascade_frontalface_alt_tree.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = haarcascade_frontalface_alt_tree.xml; sourceTree = "<group>"; };
+		81EB724C1C7EFAC4008B0390 /* haarcascade_frontalface_default.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = haarcascade_frontalface_default.xml; sourceTree = "<group>"; };
+		81EB724D1C7EFAC4008B0390 /* svm.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = svm.xml; sourceTree = "<group>"; };
+		81EB724F1C7EFAC4008B0390 /* RecognizePlate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RecognizePlate.swift; path = RecognizePlateRequire/RecognizePlate.swift; sourceTree = "<group>"; };
+		81EEEC011C7EFFE500658B9E /* TNiOSHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TNiOSHelper.swift; sourceTree = "<group>"; };
+		81EEEC131C7F0FEA00658B9E /* TNClientSocket.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TNClientSocket.swift; sourceTree = "<group>"; };
+		81EEEC151C7F101500658B9E /* DeviceStatusDataModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviceStatusDataModel.swift; sourceTree = "<group>"; };
+		81EEEC191C7F178C00658B9E /* ysocket.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ysocket.framework; path = "UIPrototype/SwiftSocket-master/build/Debug-iphoneos/ysocket.framework"; sourceTree = "<group>"; };
+		81EEEC1D1C7F198600658B9E /* SwiftSocket.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SwiftSocket.xcodeproj; path = "SwiftSocket-master/SwiftSocket.xcodeproj"; sourceTree = "<group>"; };
+		C867566B769B2566A5B1F56C /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D95C9851E2D6D811E535E2F2 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		EBC2DA1571A54E28E88DC6EA /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -41,41 +173,80 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				81EEEC2A1C7F19A100658B9E /* ysocket.framework in Frameworks */,
+				81EB721D1C7EFA9F008B0390 /* libturbojpeg.a in Frameworks */,
+				81EB721E1C7EFA9F008B0390 /* opencv2.framework in Frameworks */,
+				886F038212A9B0C74C05602C /* Pods.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		56845137352D2FBBCDFA0534 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				EBC2DA1571A54E28E88DC6EA /* Pods.debug.xcconfig */,
+				D95C9851E2D6D811E535E2F2 /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		5DE96789974968A6C441B411 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				81EEEC191C7F178C00658B9E /* ysocket.framework */,
+				81EB721B1C7EFA9F008B0390 /* libturbojpeg.a */,
+				81EB721C1C7EFA9F008B0390 /* opencv2.framework */,
+				81EB72161C7EF9BF008B0390 /* opencv2.framework */,
+				81EB72171C7EF9BF008B0390 /* libturbojpeg.a */,
+				C867566B769B2566A5B1F56C /* Pods.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		812E91651C7D5AE20057800D /* Status */ = {
+			isa = PBXGroup;
+			children = (
+				810E16781C7B0E1900B14351 /* CameraController.swift */,
+			);
+			name = Status;
+			sourceTree = "<group>";
+		};
+		812E91661C7D5AEB0057800D /* Records */ = {
+			isa = PBXGroup;
+			children = (
+				81B8D4611C7E881E009AFB91 /* RecordsTableViewCell.swift */,
+			);
+			name = Records;
+			sourceTree = "<group>";
+		};
 		8174E5E81C7C52F3001A8EAF /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
 				8135074E1C79A3D200BF5347 /* StatusViewController.swift */,
 				8135074C1C79A3BA00BF5347 /* RecordsViewController.swift */,
+				81EB71C41C7ED89E008B0390 /* SingleRecordViewController.swift */,
 			);
 			name = ViewController;
 			sourceTree = "<group>";
 		};
-		8174E5E91C7C52F8001A8EAF /* ViewModel */ = {
+		8174E5EA1C7C5319001A8EAF /* UI */ = {
 			isa = PBXGroup;
 			children = (
-				8174E5E61C7C52EF001A8EAF /* StatusViewModel.swift */,
+				81EB71C81C7EE61A008B0390 /* SingleRecord */,
+				812E91661C7D5AEB0057800D /* Records */,
+				812E91651C7D5AE20057800D /* Status */,
 			);
-			name = ViewModel;
-			sourceTree = "<group>";
-		};
-		8174E5EA1C7C5319001A8EAF /* Tool */ = {
-			isa = PBXGroup;
-			children = (
-				810E16781C7B0E1900B14351 /* CameraController.swift */,
-			);
-			name = Tool;
+			name = UI;
 			sourceTree = "<group>";
 		};
 		8174E5EB1C7C5F15001A8EAF /* DataModel */ = {
 			isa = PBXGroup;
 			children = (
-				8174E5EC1C7C5F3E001A8EAF /* RecordDataModel.swift */,
+				81EEEC151C7F101500658B9E /* DeviceStatusDataModel.swift */,
+				8174E5EC1C7C5F3E001A8EAF /* DetectedRecord.swift */,
+				81EB71C61C7EE428008B0390 /* Detector.swift */,
 			);
 			name = DataModel;
 			sourceTree = "<group>";
@@ -83,7 +254,8 @@
 		8174E5EE1C7C5FBB001A8EAF /* DataManager */ = {
 			isa = PBXGroup;
 			children = (
-				8174E5EF1C7C63C0001A8EAF /* DataManager.swift */,
+				81EB71BC1C7EACAA008B0390 /* DBAdapter.swift */,
+				81EB71BD1C7EACAA008B0390 /* DBHelper.swift */,
 			);
 			name = DataManager;
 			sourceTree = "<group>";
@@ -93,6 +265,8 @@
 			children = (
 				8194FD631C7456C00094BB21 /* UIPrototype */,
 				8194FD621C7456C00094BB21 /* Products */,
+				56845137352D2FBBCDFA0534 /* Pods */,
+				5DE96789974968A6C441B411 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -107,11 +281,12 @@
 		8194FD631C7456C00094BB21 /* UIPrototype */ = {
 			isa = PBXGroup;
 			children = (
+				81EEEC051C7F0FAB00658B9E /* vendor */,
+				81EEEC031C7EFFE800658B9E /* Utils */,
 				8174E5EE1C7C5FBB001A8EAF /* DataManager */,
 				8174E5EB1C7C5F15001A8EAF /* DataModel */,
-				8174E5E91C7C52F8001A8EAF /* ViewModel */,
-				8174E5EA1C7C5319001A8EAF /* Tool */,
 				8174E5E81C7C52F3001A8EAF /* ViewController */,
+				8174E5EA1C7C5319001A8EAF /* UI */,
 				8194FD641C7456C00094BB21 /* AppDelegate.swift */,
 				8194FD681C7456C00094BB21 /* Main.storyboard */,
 				8194FD6B1C7456C00094BB21 /* Assets.xcassets */,
@@ -122,6 +297,145 @@
 			path = UIPrototype;
 			sourceTree = "<group>";
 		};
+		81EB71C81C7EE61A008B0390 /* SingleRecord */ = {
+			isa = PBXGroup;
+			children = (
+				81EB71C91C7EE62C008B0390 /* SingleRecordDetailTableViewCell.swift */,
+			);
+			name = SingleRecord;
+			sourceTree = "<group>";
+		};
+		81EB71CB1C7EF6C0008B0390 /* Plate */ = {
+			isa = PBXGroup;
+			children = (
+				81EB721F1C7EFAC3008B0390 /* UIPrototype-Bridging-Header.h */,
+				81EB72201C7EFAC4008B0390 /* bridge */,
+				81EB722A1C7EFAC4008B0390 /* core */,
+				81EB72351C7EFAC4008B0390 /* IdentifyResult.h */,
+				81EB72361C7EFAC4008B0390 /* IdentifyResult.m */,
+				81EB72371C7EFAC4008B0390 /* include */,
+				81EB72451C7EFAC4008B0390 /* main */,
+				81EB72481C7EFAC4008B0390 /* model */,
+				81EB724F1C7EFAC4008B0390 /* RecognizePlate.swift */,
+			);
+			name = Plate;
+			sourceTree = "<group>";
+		};
+		81EB72201C7EFAC4008B0390 /* bridge */ = {
+			isa = PBXGroup;
+			children = (
+				81EB72211C7EFAC4008B0390 /* CVWrapper.h */,
+				81EB72221C7EFAC4008B0390 /* CVWrapper.mm */,
+				81EB72231C7EFAC4008B0390 /* stitching.cpp */,
+				81EB72241C7EFAC4008B0390 /* stitching.h */,
+				81EB72251C7EFAC4008B0390 /* UIImage+OpenCV.h */,
+				81EB72261C7EFAC4008B0390 /* UIImage+OpenCV.mm */,
+				81EB72271C7EFAC4008B0390 /* UIImage+Rotate.h */,
+				81EB72281C7EFAC4008B0390 /* UIImage+Rotate.m */,
+				81EB72291C7EFAC4008B0390 /* ViewController.swift */,
+			);
+			name = bridge;
+			path = RecognizePlateRequire/bridge;
+			sourceTree = "<group>";
+		};
+		81EB722A1C7EFAC4008B0390 /* core */ = {
+			isa = PBXGroup;
+			children = (
+				81EB722B1C7EFAC4008B0390 /* chars_identify.cpp */,
+				81EB722C1C7EFAC4008B0390 /* chars_recognise.cpp */,
+				81EB722D1C7EFAC4008B0390 /* chars_segment.cpp */,
+				81EB722E1C7EFAC4008B0390 /* core_func.cpp */,
+				81EB722F1C7EFAC4008B0390 /* feature.cpp */,
+				81EB72301C7EFAC4008B0390 /* plate.cpp */,
+				81EB72311C7EFAC4008B0390 /* plate_detect.cpp */,
+				81EB72321C7EFAC4008B0390 /* plate_judge.cpp */,
+				81EB72331C7EFAC4008B0390 /* plate_locate.cpp */,
+				81EB72341C7EFAC4008B0390 /* plate_recognize.cpp */,
+			);
+			name = core;
+			path = RecognizePlateRequire/core;
+			sourceTree = "<group>";
+		};
+		81EB72371C7EFAC4008B0390 /* include */ = {
+			isa = PBXGroup;
+			children = (
+				81EB72381C7EFAC4008B0390 /* chars_identify.h */,
+				81EB72391C7EFAC4008B0390 /* chars_recognise.h */,
+				81EB723A1C7EFAC4008B0390 /* chars_segment.h */,
+				81EB723B1C7EFAC4008B0390 /* core_func.h */,
+				81EB723C1C7EFAC4008B0390 /* CParser.h */,
+				81EB723D1C7EFAC4008B0390 /* feature.h */,
+				81EB723E1C7EFAC4008B0390 /* plate.h */,
+				81EB723F1C7EFAC4008B0390 /* plate_detect.h */,
+				81EB72401C7EFAC4008B0390 /* plate_judge.h */,
+				81EB72411C7EFAC4008B0390 /* plate_locate.h */,
+				81EB72421C7EFAC4008B0390 /* plate_recognize.h */,
+				81EB72431C7EFAC4008B0390 /* prep.h */,
+				81EB72441C7EFAC4008B0390 /* util.h */,
+			);
+			name = include;
+			path = RecognizePlateRequire/include;
+			sourceTree = "<group>";
+		};
+		81EB72451C7EFAC4008B0390 /* main */ = {
+			isa = PBXGroup;
+			children = (
+				81EB72461C7EFAC4008B0390 /* UIImageCVMatConverter.h */,
+				81EB72471C7EFAC4008B0390 /* UIImageCVMatConverter.mm */,
+			);
+			name = main;
+			path = RecognizePlateRequire/main;
+			sourceTree = "<group>";
+		};
+		81EB72481C7EFAC4008B0390 /* model */ = {
+			isa = PBXGroup;
+			children = (
+				81EB72491C7EFAC4008B0390 /* ann - bak.xml */,
+				81EB724A1C7EFAC4008B0390 /* ann.xml */,
+				81EB724B1C7EFAC4008B0390 /* haarcascade_frontalface_alt_tree.xml */,
+				81EB724C1C7EFAC4008B0390 /* haarcascade_frontalface_default.xml */,
+				81EB724D1C7EFAC4008B0390 /* svm.xml */,
+			);
+			name = model;
+			path = RecognizePlateRequire/model;
+			sourceTree = "<group>";
+		};
+		81EEEC031C7EFFE800658B9E /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				81EEEC011C7EFFE500658B9E /* TNiOSHelper.swift */,
+			);
+			name = Utils;
+			sourceTree = "<group>";
+		};
+		81EEEC051C7F0FAB00658B9E /* vendor */ = {
+			isa = PBXGroup;
+			children = (
+				81EEEC061C7F0FC300658B9E /* Socket */,
+				81EB71CB1C7EF6C0008B0390 /* Plate */,
+			);
+			name = vendor;
+			sourceTree = "<group>";
+		};
+		81EEEC061C7F0FC300658B9E /* Socket */ = {
+			isa = PBXGroup;
+			children = (
+				81EEEC1D1C7F198600658B9E /* SwiftSocket.xcodeproj */,
+				81EEEC131C7F0FEA00658B9E /* TNClientSocket.swift */,
+			);
+			name = Socket;
+			sourceTree = "<group>";
+		};
+		81EEEC1E1C7F198600658B9E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				81EEEC241C7F198600658B9E /* SwiftSocket */,
+				81EEEC261C7F198600658B9E /* ysocket.framework */,
+				81EEEC281C7F198600658B9E /* ysocketOSX.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -129,9 +443,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8194FD731C7456C00094BB21 /* Build configuration list for PBXNativeTarget "UIPrototype" */;
 			buildPhases = (
+				0ACBCE7215B441EF171C7970 /* Check Pods Manifest.lock */,
 				8194FD5D1C7456C00094BB21 /* Sources */,
 				8194FD5E1C7456C00094BB21 /* Frameworks */,
 				8194FD5F1C7456C00094BB21 /* Resources */,
+				1347DE5D51C4E627155037CE /* Embed Pods Frameworks */,
+				6A9D2BAE601AF89F2C7092DD /* Copy Pods Resources */,
+				81EEEC2B1C7F19AB00658B9E /* Copy Files */,
 			);
 			buildRules = (
 			);
@@ -169,6 +487,12 @@
 			mainGroup = 8194FD581C7456C00094BB21;
 			productRefGroup = 8194FD621C7456C00094BB21 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 81EEEC1E1C7F198600658B9E /* Products */;
+					ProjectRef = 81EEEC1D1C7F198600658B9E /* SwiftSocket.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				8194FD601C7456C00094BB21 /* UIPrototype */,
@@ -176,18 +500,95 @@
 		};
 /* End PBXProject section */
 
+/* Begin PBXReferenceProxy section */
+		81EEEC241C7F198600658B9E /* SwiftSocket */ = {
+			isa = PBXReferenceProxy;
+			fileType = "compiled.mach-o.executable";
+			path = SwiftSocket;
+			remoteRef = 81EEEC231C7F198600658B9E /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		81EEEC261C7F198600658B9E /* ysocket.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = ysocket.framework;
+			remoteRef = 81EEEC251C7F198600658B9E /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		81EEEC281C7F198600658B9E /* ysocketOSX.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = ysocketOSX.framework;
+			remoteRef = 81EEEC271C7F198600658B9E /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
+
 /* Begin PBXResourcesBuildPhase section */
 		8194FD5F1C7456C00094BB21 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				81EB72631C7EFAC4008B0390 /* haarcascade_frontalface_alt_tree.xml in Resources */,
+				81EB72611C7EFAC4008B0390 /* ann - bak.xml in Resources */,
+				81EB72641C7EFAC4008B0390 /* haarcascade_frontalface_default.xml in Resources */,
 				8194FD6F1C7456C00094BB21 /* LaunchScreen.storyboard in Resources */,
+				81EB72651C7EFAC4008B0390 /* svm.xml in Resources */,
 				8194FD6C1C7456C00094BB21 /* Assets.xcassets in Resources */,
+				81EB72621C7EFAC4008B0390 /* ann.xml in Resources */,
 				8194FD6A1C7456C00094BB21 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0ACBCE7215B441EF171C7970 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		1347DE5D51C4E627155037CE /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6A9D2BAE601AF89F2C7092DD /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		8194FD5D1C7456C00094BB21 /* Sources */ = {
@@ -195,13 +596,38 @@
 			buildActionMask = 2147483647;
 			files = (
 				8135074F1C79A3D200BF5347 /* StatusViewController.swift in Sources */,
-				8174E5F01C7C63C0001A8EAF /* DataManager.swift in Sources */,
+				81EB72551C7EFAC4008B0390 /* chars_identify.cpp in Sources */,
+				81EB725F1C7EFAC4008B0390 /* IdentifyResult.m in Sources */,
+				81EB725D1C7EFAC4008B0390 /* plate_locate.cpp in Sources */,
+				81B8D4621C7E881E009AFB91 /* RecordsTableViewCell.swift in Sources */,
+				81EEEC161C7F101500658B9E /* DeviceStatusDataModel.swift in Sources */,
 				81C4B4BA1C75C24300079609 /* theme.swift in Sources */,
+				81EB72591C7EFAC4008B0390 /* feature.cpp in Sources */,
+				81EB71BE1C7EACAA008B0390 /* DBAdapter.swift in Sources */,
+				81EB72521C7EFAC4008B0390 /* UIImage+OpenCV.mm in Sources */,
+				81EB71C71C7EE428008B0390 /* Detector.swift in Sources */,
+				81EB72531C7EFAC4008B0390 /* UIImage+Rotate.m in Sources */,
 				8194FD651C7456C00094BB21 /* AppDelegate.swift in Sources */,
+				81EB72571C7EFAC4008B0390 /* chars_segment.cpp in Sources */,
+				81EB725A1C7EFAC4008B0390 /* plate.cpp in Sources */,
 				810E16791C7B0E1900B14351 /* CameraController.swift in Sources */,
-				8174E5ED1C7C5F3E001A8EAF /* RecordDataModel.swift in Sources */,
-				8174E5E71C7C52EF001A8EAF /* StatusViewModel.swift in Sources */,
+				81EB72541C7EFAC4008B0390 /* ViewController.swift in Sources */,
+				81EB725E1C7EFAC4008B0390 /* plate_recognize.cpp in Sources */,
+				81EB72501C7EFAC4008B0390 /* CVWrapper.mm in Sources */,
+				81EB725B1C7EFAC4008B0390 /* plate_detect.cpp in Sources */,
+				81EEEC021C7EFFE500658B9E /* TNiOSHelper.swift in Sources */,
+				81EB72661C7EFAC4008B0390 /* RecognizePlate.swift in Sources */,
+				81EB71BF1C7EACAA008B0390 /* DBHelper.swift in Sources */,
+				8174E5ED1C7C5F3E001A8EAF /* DetectedRecord.swift in Sources */,
+				81EB71CA1C7EE62C008B0390 /* SingleRecordDetailTableViewCell.swift in Sources */,
+				81EB71C51C7ED89E008B0390 /* SingleRecordViewController.swift in Sources */,
+				81EEEC141C7F0FEA00658B9E /* TNClientSocket.swift in Sources */,
+				81EB72581C7EFAC4008B0390 /* core_func.cpp in Sources */,
 				8135074D1C79A3BA00BF5347 /* RecordsViewController.swift in Sources */,
+				81EB725C1C7EFAC4008B0390 /* plate_judge.cpp in Sources */,
+				81EB72511C7EFAC4008B0390 /* stitching.cpp in Sources */,
+				81EB72601C7EFAC4008B0390 /* UIImageCVMatConverter.mm in Sources */,
+				81EB72561C7EFAC4008B0390 /* chars_recognise.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -247,6 +673,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_BITCODE = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -291,6 +718,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_BITCODE = NO;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -310,23 +738,54 @@
 		};
 		8194FD741C7456C00094BB21 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = EBC2DA1571A54E28E88DC6EA /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/UIPrototype",
+					"$(PROJECT_DIR)/UIPrototype/RecognizePlateRequire",
+					"$(PROJECT_DIR)/UIPrototype/SwiftSocket-master/build/Debug-iphoneos",
+				);
 				INFOPLIST_FILE = UIPrototype/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/UIPrototype",
+					"$(PROJECT_DIR)/UIPrototype/RecognizePlateRequire",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = miao.UIPrototype;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = UIPrototype;
+				SWIFT_OBJC_BRIDGING_HEADER = "UIPrototype/UIPrototype-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
 		8194FD751C7456C00094BB21 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D95C9851E2D6D811E535E2F2 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/UIPrototype",
+					"$(PROJECT_DIR)/UIPrototype/RecognizePlateRequire",
+					"$(PROJECT_DIR)/UIPrototype/SwiftSocket-master/build/Debug-iphoneos",
+				);
 				INFOPLIST_FILE = UIPrototype/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/UIPrototype",
+					"$(PROJECT_DIR)/UIPrototype/RecognizePlateRequire",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = miao.UIPrototype;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = UIPrototype;
+				SWIFT_OBJC_BRIDGING_HEADER = "UIPrototype/UIPrototype-Bridging-Header.h";
 			};
 			name = Release;
 		};
