@@ -28,8 +28,8 @@ class CameraController: NSObject {
         super.init()
         self.delegate = delegate
         
+
         let authorizationStatus = AVCaptureDevice.authorizationStatusForMediaType(AVMediaTypeVideo)
-        
         switch authorizationStatus {
         case .NotDetermined:
             AVCaptureDevice.requestAccessForMediaType(AVMediaTypeVideo,
@@ -45,7 +45,6 @@ class CameraController: NSObject {
             })
             break
         case .Authorized:
-            
             self.setupCaptureSession()
             self.startCaptureSession()
             break
@@ -62,7 +61,6 @@ class CameraController: NSObject {
         self.captureSession = AVCaptureSession()
         self.captureSession?.sessionPreset = AVCaptureSessionPresetPhoto
         //sessionPreset属性用于控制会话的数据质量，在拍摄视频时比较有用，这里我们只需要设为AVCaptureSessionPresetPhoto就可以了
-        
         //2 创建输入设备
         self.captureDevice = AVCaptureDevice.defaultDeviceWithMediaType(AVMediaTypeVideo)
         //3 创建输入
@@ -70,7 +68,6 @@ class CameraController: NSObject {
         //4 创建输出
         self.stillImageOutput = AVCaptureStillImageOutput()
         self.stillImageOutput?.outputSettings = [AVVideoCodecKey: AVVideoCodecJPEG]
-        
         //5 连接输入输出与会话
         if let session = self.captureSession {
             if session.canAddInput(self.captureDeviceInput) {
@@ -82,7 +79,9 @@ class CameraController: NSObject {
             
             //6 预览
             self.videoPreviewLayer = AVCaptureVideoPreviewLayer(session: self.captureSession)
-            self.videoPreviewLayer?.connection.videoOrientation = AVCaptureVideoOrientation(rawValue: UIDevice.currentDevice().orientation.rawValue)!
+            if let orientation = AVCaptureVideoOrientation(rawValue: UIDevice.currentDevice().orientation.rawValue) {
+                self.videoPreviewLayer?.connection?.videoOrientation = orientation
+            }
         }
         
     }

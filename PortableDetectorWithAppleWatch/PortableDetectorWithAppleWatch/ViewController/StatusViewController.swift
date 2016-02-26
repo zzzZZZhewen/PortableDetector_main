@@ -63,7 +63,6 @@ class StatusViewController: UIViewController {
 
         deviceDataModel = DeviceStatusDataModel(delegate: self)
         deviceDataModel.startSocket()
-
     }
     
     override func viewDidLayoutSubviews() {
@@ -71,7 +70,9 @@ class StatusViewController: UIViewController {
         
         if let previewLayer = cameraPreviewLayer {
             previewLayer.frame = cameraPreview.bounds
-            previewLayer.connection.videoOrientation = AVCaptureVideoOrientation(rawValue: UIDevice.currentDevice().orientation.rawValue)!
+            if let orientation = AVCaptureVideoOrientation(rawValue: UIDevice.currentDevice().orientation.rawValue) {
+                previewLayer.connection?.videoOrientation = orientation
+            }
         }
     }
 
@@ -174,7 +175,9 @@ extension StatusViewController: DeviceStatusDelegate {
     func cameraControllerDidInitiated(cameraController: CameraController) {
         if let previewLayer = cameraController.videoPreviewLayer {
             previewLayer.frame = cameraPreview.bounds
-            cameraPreview.layer.addSublayer(previewLayer)
+            if let orientation = AVCaptureVideoOrientation(rawValue: UIDevice.currentDevice().orientation.rawValue) {
+                previewLayer.connection?.videoOrientation = orientation
+            }
             cameraPreviewLayer = previewLayer
         }
     }
