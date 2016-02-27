@@ -10,7 +10,7 @@ import UIKit
 
 class SingleRecordViewController: UIViewController {
     
-    @IBOutlet weak var SingleRecordTableView: UITableView!
+    @IBOutlet weak var singleRecordTableView: UITableView!
     @IBOutlet var smallPlateTableViewCell: UITableViewCell!
     
     
@@ -25,39 +25,42 @@ class SingleRecordViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-       
+        self.navigationController?.interactivePopGestureRecognizer?.enabled = true
+        self.navigationController?.interactivePopGestureRecognizer?.delegate = self
     }
 
     override func viewWillAppear(animated: Bool) {
-        super.viewWillAppear(true)
+        super.viewWillAppear(animated)
         
         updateDetails()
     }
     
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
+    /// MARK: - Navigation
     
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        if segue.identifier == "editDetail" {
+            if let controller = segue.destinationViewController as? SingleDetailViewController, cell = sender as? SingleRecordDetailTableViewCell {
+                controller.detailStyle = .TextFiledOnly
+                controller.detailName = cell.nameLabel.text
+                controller.detailValue = cell.valueLabel.text
+                controller.detectedRecord = self.detectedRecord
+            }
+        }
+        if segue.identifier == "showImage" {
+            if let controller = segue.destinationViewController as? SingleDetailViewController {
+                controller.detailName = "检测图片"
+                controller.detailStyle = DetailStyle.FullScaleImageOnly
+                controller.detectedRecord = self.detectedRecord
+            }
+        }
     }
-    */
     
     @IBAction func backButtonTapped(sender: AnyObject) {
         self.navigationController?.popToRootViewControllerAnimated(true)
     }
     
     func updateDetails() {
-        
-        // 更换两张图片
+        self.singleRecordTableView.reloadData()
     }
 
 }
@@ -72,9 +75,9 @@ extension SingleRecordViewController: UITableViewDelegate, UITableViewDataSource
     
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         if indexPath.row == 0 {
-            return 80.0
+            return 60.0
         }
-        return 44.0
+        return 40.0
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
@@ -82,7 +85,7 @@ extension SingleRecordViewController: UITableViewDelegate, UITableViewDataSource
             return smallPlateTableViewCell
         }
         let id = "SingleRecordDetailTableViewCellID"
-        if let cell = SingleRecordTableView.dequeueReusableCellWithIdentifier(id) as? SingleRecordDetailTableViewCell {
+        if let cell = singleRecordTableView.dequeueReusableCellWithIdentifier(id) as? SingleRecordDetailTableViewCell {
             switch indexPath.row {
             case 1:
                 cell.nameLabel.text = "车牌号码"
@@ -93,8 +96,8 @@ extension SingleRecordViewController: UITableViewDelegate, UITableViewDataSource
                 cell.valueLabel.text = detectedRecord.detect_time
                 break
             case 3:
-                cell.nameLabel.text = "车辆型号"
-                cell.valueLabel.text = detectedRecord.truck_type
+                cell.nameLabel.text = "车辆轴型"
+                cell.valueLabel.text = detectedRecord.truck_type.rawValue
                 break
             case 4:
                 cell.nameLabel.text = "车辆重量"
@@ -127,6 +130,14 @@ extension SingleRecordViewController: UITableViewDelegate, UITableViewDataSource
     
     
     func tableView(tableView: UITableView, willSelectRowAtIndexPath indexPath: NSIndexPath) -> NSIndexPath? {
-        return nil
+        if indexPath.row == 3 || indexPath.row == 2 || indexPath.row == 8 {
+            return nil
+        }
+        
+        return indexPath
     }
+}
+
+extension SingleRecordViewController: UIGestureRecognizerDelegate {
+    
 }

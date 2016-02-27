@@ -14,16 +14,17 @@ let host:String="http://192.168.163.1"
 let localImgPath:String=""
 
 enum truck_types:String{
-    case two="两轴车"
-    case three="三轴车"
-    case four="四轴车"
-    case five="五轴车"
-    case five_one="五轴一型车"
-    case five_two="五轴二型车"
-    case six_one="六轴一型车"
-    case six_two="六轴二型车"
+    case unknown = "未识别车型"
+    case two = "两轴车"
+    case three = "三轴车"
+    case four = "四轴车"
+    case five = "五轴车"
+    case five_one = "五轴一型车"
+    case five_two = "五轴二型车"
+    case six_one = "六轴一型车"
+    case six_two = "六轴二型车"
+    static let truckTypes: [truck_types] = [.unknown, .two, .three, .four, .five, .five_one, .five_two, .six_one, .six_two]
 }
-
 
 class DetectedRecord{
     var collection_id:Int
@@ -35,7 +36,7 @@ class DetectedRecord{
     var width:Float=0.0
     var height:Float=0.0
     
-    var truck_type:String="未识别车型"
+    var truck_type: truck_types = .unknown
     var axle_number:Int
     var detect_time:String
     var detect_time_date: NSDate
@@ -88,12 +89,12 @@ class DetectedRecord{
         collection_id=id
         self.plate_number=plate_number
         self.weight=weight
-        self.truck_type=truck_type
+        self.truck_type=truck_types(rawValue: truck_type)!
         self.axle_number=axle_number
         let date:NSDate=NSDate()
         detect_time_date = date
         let formatter=NSDateFormatter()
-        formatter.dateFormat="yyyy-MM-DD HH:mm:ss"
+        formatter.dateFormat="yyyy-MM-dd HH:mm:ss"
         self.detect_time=formatter.stringFromDate(date)
         self.speed=speed
         self.detect_user=detect_user
@@ -152,7 +153,7 @@ class DetectedRecord{
                 "weight":weight,
                 "over_weight":over_weight,
                 "axle_number":axle_number,//2，3，4，5，6
-                "truck_type":truck_type,
+                "truck_type":truck_type.rawValue,
                 "length":length,
                 "over_length":over_length,
                 "width":width,

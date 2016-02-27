@@ -2,4 +2,99 @@
 <Bucket
    type = "0"
    version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PortableDetectorWithAppleWatch/ViewController/SingleDetailViewController.swift"
+            timestampString = "478281995.617421"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "41"
+            endingLineNumber = "41"
+            landmarkName = "SingleDetailViewController"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "PortableDetectorWithAppleWatch.SingleDetailViewController.detailName.getter : Swift.Optional&lt;Swift.String&gt;"
+                  moduleName = "PortableDetectorWithAppleWatch"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/miaozhewen/Downloads/GIT/PortableDetector_main/PortableDetectorWithAppleWatch/PortableDetectorWithAppleWatch/ViewController/SingleDetailViewController.swift"
+                  timestampString = "478281995.67178"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "15">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "PortableDetectorWithAppleWatch.SingleDetailViewController.detailName.setter : Swift.Optional&lt;Swift.String&gt;"
+                  moduleName = "PortableDetectorWithAppleWatch"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/miaozhewen/Downloads/GIT/PortableDetector_main/PortableDetectorWithAppleWatch/PortableDetectorWithAppleWatch/ViewController/SingleDetailViewController.swift"
+                  timestampString = "478281995.672878"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "50">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "PortableDetectorWithAppleWatch.SingleDetailViewController.detailName.materializeForSet : Swift.Optional&lt;Swift.String&gt;"
+                  moduleName = "PortableDetectorWithAppleWatch"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/miaozhewen/Downloads/GIT/PortableDetector_main/PortableDetectorWithAppleWatch/PortableDetectorWithAppleWatch/ViewController/SingleDetailViewController.swift"
+                  timestampString = "478281995.673038"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "12">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "PortableDetectorWithAppleWatch.SingleDetailViewController.init (PortableDetectorWithAppleWatch.SingleDetailViewController.Type)(nibName : Swift.Optional&lt;Swift.String&gt;, bundle : Swift.Optional&lt;__ObjC.NSBundle&gt;) -&gt; PortableDetectorWithAppleWatch.SingleDetailViewController"
+                  moduleName = "PortableDetectorWithAppleWatch"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/miaozhewen/Downloads/GIT/PortableDetector_main/PortableDetectorWithAppleWatch/PortableDetectorWithAppleWatch/ViewController/SingleDetailViewController.swift"
+                  timestampString = "478281995.673158"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "42"
+                  endingLineNumber = "42"
+                  offsetFromSymbolStart = "537">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "PortableDetectorWithAppleWatch.SingleDetailViewController.init (PortableDetectorWithAppleWatch.SingleDetailViewController.Type)(coder : __ObjC.NSCoder) -&gt; Swift.Optional&lt;PortableDetectorWithAppleWatch.SingleDetailViewController&gt;"
+                  moduleName = "PortableDetectorWithAppleWatch"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/miaozhewen/Downloads/GIT/PortableDetector_main/PortableDetectorWithAppleWatch/PortableDetectorWithAppleWatch/ViewController/SingleDetailViewController.swift"
+                  timestampString = "478281995.673272"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "42"
+                  endingLineNumber = "42"
+                  offsetFromSymbolStart = "469">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
 </Bucket>

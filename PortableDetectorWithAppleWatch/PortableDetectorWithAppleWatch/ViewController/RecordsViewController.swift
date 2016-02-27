@@ -151,14 +151,14 @@ class RecordsViewController: UIViewController {
         
         conductDateLabel.textColor = conductDateLabel.tintColor
         
+        datePicker.setDate(conductDate, animated: false)
         
         searchPanelTableView.beginUpdates()
         searchPanelTableView.insertRowsAtIndexPaths([datePickerTableCellIndexPath], withRowAnimation: .Fade)
         searchPanelTableView.reloadRowsAtIndexPaths([conductDateTableCellIndexPath], withRowAnimation: .None)
         searchPanelTableView.endUpdates()
         
-        datePicker.setDate(conductDate, animated: false)
-        searchPanelTableView.scrollToRowAtIndexPath(datePickerTableCellIndexPath, atScrollPosition: .Top, animated: true)
+        searchPanelTableView.scrollToRowAtIndexPath(conductDateTableCellIndexPath, atScrollPosition: .Top, animated: true)
     }
     
     func showConductorPicker() {
@@ -172,13 +172,14 @@ class RecordsViewController: UIViewController {
         
         conductorLabel.textColor = conductorLabel.tintColor
         
+        conductorPicker.selectRow(conductorRow, inComponent: 0, animated: false)
+        
         searchPanelTableView.beginUpdates()
         searchPanelTableView.insertRowsAtIndexPaths([conductorPickerTableCellIndexPath], withRowAnimation: .Fade)
         searchPanelTableView.reloadRowsAtIndexPaths([conductorTableCellIndexPath], withRowAnimation: .None)
         searchPanelTableView.endUpdates()
         
-        conductorPicker.selectRow(conductorRow, inComponent: 0, animated: false)
-        searchPanelTableView.scrollToRowAtIndexPath(conductorPickerTableCellIndexPath, atScrollPosition: .Top, animated: true)
+        searchPanelTableView.scrollToRowAtIndexPath(conductorTableCellIndexPath, atScrollPosition: .Top, animated: true)
     }
     
     func hideDatePicker() {
@@ -190,7 +191,6 @@ class RecordsViewController: UIViewController {
             onlyOverRecordTableCellIndexPath = NSIndexPath(forRow: 3, inSection: 0)
             
             conductDateLabel.textColor = UIColor(white: 0, alpha: 0.5)
-            
             
             searchPanelTableView.beginUpdates()
             searchPanelTableView.reloadRowsAtIndexPaths([conductDateTableCellIndexPath], withRowAnimation: .None)
@@ -244,6 +244,19 @@ extension RecordsViewController: UITableViewDelegate, UITableViewDataSource {
         }
     }
     
+    
+    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        if tableView == searchPanelTableView {
+            if datePickerTableCelVisible && indexPath.row == datePickerTableCellIndexPath.row {
+                return 100.0
+            }
+            if conductorPickerTableCellVisible && indexPath.row == conductorPickerTableCellIndexPath.row {
+                return 100.0
+            }
+        }
+        return 40.0
+    }
+    
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         if tableView == searchPanelTableView {
             if indexPath.row == plateInputTableCellIndexPath.row {
@@ -281,21 +294,9 @@ extension RecordsViewController: UITableViewDelegate, UITableViewDataSource {
         return UITableViewCell(style: .Default, reuseIdentifier: "cell")
     }
     
-    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        if tableView == searchPanelTableView {
-            if datePickerTableCelVisible && indexPath.row == datePickerTableCellIndexPath.row {
-                return 100.0
-            }
-            if conductorPickerTableCellVisible && indexPath.row == conductorPickerTableCellIndexPath.row {
-                return 100.0
-            }
-        }
-        return 44.0
-    }
-    
     func tableView(tableView: UITableView, willSelectRowAtIndexPath indexPath: NSIndexPath) -> NSIndexPath? {
+        plateTextField.resignFirstResponder()
         if tableView == searchPanelTableView {
-            plateTextField.resignFirstResponder()
             if indexPath.row == onlyOverRecordTableCellIndexPath.row {
                 onlyOverRecordSwitch.setOn(!onlyOverRecordSwitch.on, animated: true)
             }
@@ -304,18 +305,16 @@ extension RecordsViewController: UITableViewDelegate, UITableViewDataSource {
             }
             if indexPath.row == conductDateTableCellIndexPath.row || indexPath.row == conductorTableCellIndexPath.row {
                 return indexPath
-            } else {
-                hideConductorPicker()
-                hideDatePicker()
             }
+            hideConductorPicker()
+            hideDatePicker()
         } else {
+            hideConductorPicker()
+            hideDatePicker()
             return indexPath
         }
         return nil
-        
     }
-    
-
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         if tableView == searchPanelTableView {
@@ -336,8 +335,6 @@ extension RecordsViewController: UITableViewDelegate, UITableViewDataSource {
             tableView.reloadRowsAtIndexPaths([indexPath], withRowAnimation: .None)
         }
     }
-    
-
 }
 
 extension RecordsViewController: UITextFieldDelegate {
@@ -349,6 +346,7 @@ extension RecordsViewController: UITextFieldDelegate {
     
     func textFieldDidBeginEditing(textField: UITextField) {
         hideDatePicker()
+        hideConductorPicker()
     }
     
     func textFieldShouldReturn(textField: UITextField) -> Bool {

@@ -72,7 +72,7 @@ class DBAdapter {
                 truck_photo <- record.truck_photo,
                 plate_photo <- record.plate_photo,
                 axle_number <- record.axle_number,
-                truck_type <- record.truck_type,
+                truck_type <- record.truck_type.rawValue,
                speed <- String(record.speed),
                 weight <- String(record.weight),
                 over_weight <- String(record.over_weight),

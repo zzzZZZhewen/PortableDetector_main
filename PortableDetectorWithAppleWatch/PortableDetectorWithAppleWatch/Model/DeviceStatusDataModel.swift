@@ -13,7 +13,38 @@ protocol DeviceStatusDelegate: class {
     func cameraControllerDidInitiated(cameraController: CameraController)
 }
 
-
+enum btnStatusList:Int{
+    case Default = 0,Detecting, Analyzing, AutoSaving, Saved, Printing
+    var btnStatus:[[AnyObject]]{
+        switch self{
+        case .Default:
+            return [
+                [true,"开始"],[false,"停止"],[false,"取消"],[false,"保存"],[false,"打印"]
+            ]
+        case .Detecting:
+            return [
+                [false,"检测中"],[true,"停止"],[true,"取消"],[false,"保存"],[false,"打印"]
+            ]
+        case .Analyzing:
+            return [
+                [false,"分析中"],[false,"停止"],[true,"取消"],[false,"保存"],[false,"打印"]
+            ]
+        case .AutoSaving:
+            return [
+                [true,"开始"],[false,"停止"],[true,"取消"],[true,"保存(5)"],[false,"打印"]
+            ]
+        case .Saved:
+            return [
+                [true,"开始"],[false,"停止"],[true,"取消"],[false,"保存"],[true,"打印"]
+            ]
+        case .Printing:
+            return [
+                [true,"开始"],[false,"停止"],[false,"取消"],[false,"保存"],[false,"打印中"]
+            ]
+            
+        }
+    }
+}
 
 //上面的信息状态栏。电量，信号等
 class DeviceStatusDataModel {
@@ -377,37 +408,6 @@ extension DeviceStatusDataModel: RecognizePlateDelegate {
 }
 
 
-enum btnStatusList:Int{
-    case Default = 0,Detecting, Analyzing, AutoSaving, Saved, Printing
-    var btnStatus:[[AnyObject]]{
-        switch self{
-        case .Default:
-            return [
-                [true,"开始"],[false,"停止"],[false,"取消"],[false,"保存"],[false,"打印"]
-            ]
-        case .Detecting:
-            return [
-                [false,"检测中"],[true,"停止"],[true,"取消"],[false,"保存"],[false,"打印"]
-            ]
-        case .Analyzing:
-            return [
-                [false,"分析中"],[false,"停止"],[true,"取消"],[false,"保存"],[false,"打印"]
-            ]
-        case .AutoSaving:
-            return [
-                [true,"开始"],[false,"停止"],[true,"取消"],[true,"保存(5)"],[false,"打印"]
-            ]
-        case .Saved:
-            return [
-                [true,"开始"],[false,"停止"],[true,"取消"],[false,"保存"],[true,"打印"]
-            ]
-        case .Printing:
-            return [
-                [true,"开始"],[false,"停止"],[false,"取消"],[false,"保存"],[false,"打印中"]
-            ]
-            
-        }
-    }
-}
+
 
 

@@ -30,12 +30,12 @@ class CameraController: NSObject {
         
 
         let authorizationStatus = AVCaptureDevice.authorizationStatusForMediaType(AVMediaTypeVideo)
+
         switch authorizationStatus {
         case .NotDetermined:
             AVCaptureDevice.requestAccessForMediaType(AVMediaTypeVideo,
                 completionHandler: { (granted:Bool) -> Void in
                     if granted {
-                        
                         self.setupCaptureSession()
                         self.startCaptureSession()
                     }
@@ -79,7 +79,7 @@ class CameraController: NSObject {
             
             //6 预览
             self.videoPreviewLayer = AVCaptureVideoPreviewLayer(session: self.captureSession)
-            if let orientation = AVCaptureVideoOrientation(rawValue: UIDevice.currentDevice().orientation.rawValue) {
+            if let orientation = AVCaptureVideoOrientation(rawValue: UIApplication.sharedApplication().statusBarOrientation.rawValue) {
                 self.videoPreviewLayer?.connection?.videoOrientation = orientation
             }
         }
@@ -98,7 +98,9 @@ class CameraController: NSObject {
         // 1.获得连接
         let captureConnection = self.stillImageOutput?.connectionWithMediaType(AVMediaTypeVideo)
         // 控制拍照出来的方向
-        captureConnection!.videoOrientation = AVCaptureVideoOrientation(rawValue: UIDevice.currentDevice().orientation.rawValue)!
+        if let orientation = AVCaptureVideoOrientation(rawValue: UIApplication.sharedApplication().statusBarOrientation.rawValue) {
+            captureConnection?.videoOrientation = orientation
+        }
         // 2.拍摄照片
         self.stillImageOutput?.captureStillImageAsynchronouslyFromConnection(captureConnection, completionHandler: { (imageDataBuffer, error) -> Void in
             let imageData = AVCaptureStillImageOutput.jpegStillImageNSDataRepresentation(imageDataBuffer)

@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0A96A18F349796309E4301A4 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B106E8F0FF72CB83FB97351 /* Pods.framework */; };
+		81A340471C815CA600357BCC /* SingleDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A340461C815CA600357BCC /* SingleDetailViewController.swift */; };
 		81AA06C21C7FF32D00317E7E /* RecordsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81AA06BF1C7FF32D00317E7E /* RecordsViewController.swift */; };
 		81AA06C31C7FF32D00317E7E /* SingleRecordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81AA06C01C7FF32D00317E7E /* SingleRecordViewController.swift */; };
 		81AA06C41C7FF32D00317E7E /* StatusViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81AA06C11C7FF32D00317E7E /* StatusViewController.swift */; };
@@ -138,6 +139,7 @@
 		0B106E8F0FF72CB83FB97351 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		359D938AA33581C75C83E5B2 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		42AA9ABC67050B97A2711E53 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		81A340461C815CA600357BCC /* SingleDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SingleDetailViewController.swift; sourceTree = "<group>"; };
 		81AA06BF1C7FF32D00317E7E /* RecordsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordsViewController.swift; sourceTree = "<group>"; };
 		81AA06C01C7FF32D00317E7E /* SingleRecordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SingleRecordViewController.swift; sourceTree = "<group>"; };
 		81AA06C11C7FF32D00317E7E /* StatusViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusViewController.swift; sourceTree = "<group>"; };
@@ -242,6 +244,7 @@
 				81AA06BF1C7FF32D00317E7E /* RecordsViewController.swift */,
 				81AA06C01C7FF32D00317E7E /* SingleRecordViewController.swift */,
 				81AA06C11C7FF32D00317E7E /* StatusViewController.swift */,
+				81A340461C815CA600357BCC /* SingleDetailViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -712,6 +715,7 @@
 				81AA06D71C7FF3AD00317E7E /* DBAdapter.swift in Sources */,
 				81AA07171C7FF3B500317E7E /* feature.cpp in Sources */,
 				81AA06D31C7FF39800317E7E /* DeviceStatusDataModel.swift in Sources */,
+				81A340471C815CA600357BCC /* SingleDetailViewController.swift in Sources */,
 				81AA07491C7FF3D200317E7E /* TNClientSocket.swift in Sources */,
 				81AA07101C7FF3B500317E7E /* UIImage+OpenCV.mm in Sources */,
 				81AA06C41C7FF32D00317E7E /* StatusViewController.swift in Sources */,
