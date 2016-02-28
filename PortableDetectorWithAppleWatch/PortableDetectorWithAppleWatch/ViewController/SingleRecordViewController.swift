@@ -93,7 +93,12 @@ extension SingleRecordViewController: UITableViewDelegate, UITableViewDataSource
                 break
             case 2:
                 cell.nameLabel.text = "检测时间"
-                cell.valueLabel.text = detectedRecord.detect_time
+                let formatter = NSDateFormatter()
+                formatter.dateStyle = .MediumStyle
+                formatter.timeStyle = .MediumStyle
+                
+                cell.valueLabel.text = formatter.stringFromDate(detectedRecord.detect_time)
+
                 break
             case 3:
                 cell.nameLabel.text = "车辆轴型"

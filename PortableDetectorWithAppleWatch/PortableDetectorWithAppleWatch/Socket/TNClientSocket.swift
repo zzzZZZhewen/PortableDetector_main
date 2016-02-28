@@ -18,7 +18,7 @@ class TNClientSocket:TCPClient{
     weak var delegate:TNClientSocketMsgDelegate?
     init(delegate:TNClientSocketMsgDelegate){
         self.delegate=delegate
-        super.init(addr: "192.168.1.219",port: 800)
+        super.init(addr: socketInfo.weightAHost,port: socketInfo.weightAPort)
     }
     
     func startRead()->(){
@@ -29,23 +29,23 @@ class TNClientSocket:TCPClient{
                     let data=self.read(1024)
                     if let d=data{
                         if let str=String(bytes: d, encoding: NSUTF8StringEncoding){
-                           // print(str)
+                            // print(str)
                             let myStrings = str.componentsSeparatedByCharactersInSet(NSCharacterSet.newlineCharacterSet())
                             for i in myStrings{
                                 //print(i)
                                 if(i.hasPrefix("cmd:")){
-                                   
+                                    
                                     self.delegate?.updateFromSocket(self.processRawData(i)!)//通知上层更新
                                 }
-                        
+                                
                             }
                         }
                     }else{
                         //将来在这里执行重连。。。
                         print("断掉")
                     }
-
-                  usleep(10000)
+                    
+                    usleep(10000)
                 }
                 
             }else{
@@ -71,25 +71,27 @@ class TNClientSocket:TCPClient{
             let value=array2[1]
             return ["success":true,"cmd":"\(cmdindex)","deviceID":deviceID,"value":"\(value)"]
             
-           
+            
             
         }else{
             return nil
         }
         
     }
-  //
-     func send(string: String,dowork:()->()){
-            dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0), {
-               
-                let (success,msg)=super.send(str: "\(string)\n")
-                    if success{
-                        dowork()
-//                        else
-//                        self.delegate?.updateFromSocket(["success":false,"msg":msg])
+    //
+    func send(string: String,dowork:()->()){
+        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0), {
+            
+            let (success,msg)=super.send(str: "\(string)\n")
+            if success{
+                dowork()
+            }
+                else{
+                    self.delegate?.updateFromSocket(["success":false,"msg":"指令发送失败：\(msg)"])
                 }
+            
         })
         
     }
-
+    
 }

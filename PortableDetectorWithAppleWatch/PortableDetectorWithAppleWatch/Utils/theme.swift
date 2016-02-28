@@ -38,3 +38,18 @@ struct theme {
 }
 
 public let AxleStyleArray: [String] = ["两轴车","三轴车"]
+
+//socket
+struct socketInfo{
+   static let weightAHost = "192.168.216.1"
+   static let weightAPort = 800
+    
+   static let weightBHost = "192.168.216.1"
+   static let weightBPort = 800
+   
+    static let printerHost = "192.168.216.1"
+    static let printerPort = 800
+    
+   static let coilSensorHost = "192.168.216.1"
+   static let coilSensorPort = 800
+}

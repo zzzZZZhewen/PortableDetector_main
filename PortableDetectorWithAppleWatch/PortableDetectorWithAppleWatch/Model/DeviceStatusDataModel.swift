@@ -10,46 +10,17 @@ import Foundation
 protocol DeviceStatusDelegate: class {
     func statusDataModel(didGetStautsWithDataModel dataModel: DeviceStatusDataModel)
     func detectDataModel(didGetStautsWithDataModel dataModel: DeviceStatusDataModel)
+    func readDataModel(didGetStautsWithDataModel dataModel: DeviceStatusDataModel)
+    
     func cameraControllerDidInitiated(cameraController: CameraController)
 }
 
-enum btnStatusList:Int{
-    case Default = 0,Detecting, Analyzing, AutoSaving, Saved, Printing
-    var btnStatus:[[AnyObject]]{
-        switch self{
-        case .Default:
-            return [
-                [true,"开始"],[false,"停止"],[false,"取消"],[false,"保存"],[false,"打印"]
-            ]
-        case .Detecting:
-            return [
-                [false,"检测中"],[true,"停止"],[true,"取消"],[false,"保存"],[false,"打印"]
-            ]
-        case .Analyzing:
-            return [
-                [false,"分析中"],[false,"停止"],[true,"取消"],[false,"保存"],[false,"打印"]
-            ]
-        case .AutoSaving:
-            return [
-                [true,"开始"],[false,"停止"],[true,"取消"],[true,"保存(5)"],[false,"打印"]
-            ]
-        case .Saved:
-            return [
-                [true,"开始"],[false,"停止"],[true,"取消"],[false,"保存"],[true,"打印"]
-            ]
-        case .Printing:
-            return [
-                [true,"开始"],[false,"停止"],[false,"取消"],[false,"保存"],[false,"打印中"]
-            ]
-            
-        }
-    }
-}
+
 
 //上面的信息状态栏。电量，信号等
 class DeviceStatusDataModel {
     weak var delegate:DeviceStatusDelegate!
-        var isBalanceAConnected = false{
+    var isBalanceAConnected = false{
         didSet{
             if(!isBalanceAConnected){
                 
@@ -86,7 +57,7 @@ class DeviceStatusDataModel {
             }else{
                 labelInstrumentStatusValue="已连接"
                 labelInstrumentStatusTitle="状态"
-
+                
             }
         }
     }
@@ -101,7 +72,7 @@ class DeviceStatusDataModel {
     private var balanceBBatteryLevel = 0{
         didSet{
             labelBatteryB="电量:\(balanceBBatteryLevel)%"
-
+            
         }
     }
     private var instrumentBatteryLevel = 0{
@@ -137,7 +108,7 @@ class DeviceStatusDataModel {
                 labelSignalB="信号:一般"
             case 2:
                 labelSignalB="信号:弱"
-
+                
             default:
                 print("")
                 
@@ -150,7 +121,7 @@ class DeviceStatusDataModel {
             if(hasCar==false && newValue==true){
                 print("开始检测")
                 startDetect()
-               
+                
             }else if hasCar==true && newValue==false{
                 print("停止检测")
                 stopDetect()
@@ -159,11 +130,11 @@ class DeviceStatusDataModel {
         }
         didSet{
             labelCarStatusValue=(hasCar ? "有车" : "无车")
-                print("\(labelCarStatusValue)")
-            }
-       
+            print("\(labelCarStatusValue)")
+        }
+        
     }
-
+    
     var detectStatus = btnStatusList.Default{
         didSet{
             switch(detectStatus){
@@ -205,14 +176,9 @@ class DeviceStatusDataModel {
     var labelSignalA="信号:－－"
     var labelBatteryA="电量:－％"
     
-  //  var currentRecord:DetectRecord //最后应该是用这个变量记录当前检测值
+    //  var currentRecord:DetectRecord //最后应该是用这个变量记录当前检测值
     
     var plateImage:UIImage = UIImage(named: "no_plate")!
-    var textOverWeight=""
-    var switchOverWeight=false
-    var textWeight=""
-    var textSpeed=""
-    var textPlateNumber=""
     
     var recordEditEnable:Bool=false
     
@@ -221,27 +187,37 @@ class DeviceStatusDataModel {
     var cameraController: CameraController!
     var recognizer: RecognizePlate!
     
+    var currentRecord:DetectedRecord!
+    
     init(delegate:DeviceStatusDelegate){
         self.delegate = delegate
+        
         socket = TNClientSocket(delegate: self)
+        
         cameraController = CameraController(delegate: self)
         delegate.cameraControllerDidInitiated(cameraController)
+        
         recognizer = RecognizePlate(delegate: self)
+        currentRecord = DetectedRecord(detect_user:1)
     }
+    
+    // serivce
     
     private func loadStatus(cmd:Int,deviceID:Int,value:String){
         print("\(cmd) \(deviceID) \(value)")
         switch cmd{
         case 0://车辆信息
             switch deviceID{
-               case 3://称台下发的车辆信息：cmd:0,3,2/2.56/2
+            case 3://称台下发的车辆信息：cmd:0,3,2/2.56/2
                 let array2=value.componentsSeparatedByString("/")
-                 textOverWeight=""
-                 switchOverWeight=false
-                 textSpeed=array2[1]
-                textWeight=array2[2]
-                 //textPlateNumber=""
+               
+                let axle_number = (array2[0] as NSString).integerValue
+                
+                
+                currentRecord.setTruckInfo((array2[2] as NSString).floatValue , truck_type: truck_types.truckTypes[axle_number-1], axle_number: axle_number, speed: (array2[1] as NSString).floatValue )//轴型临时就这样
+
                 detectStatus = btnStatusList.AutoSaving//数据获取完进入保存阶段
+                self.delegate?.readDataModel(didGetStautsWithDataModel:self)
                 
             default:
                 print("")
@@ -255,8 +231,8 @@ class DeviceStatusDataModel {
                 
             case "ready":
                 hasCar=false
-               
-
+                
+                
             default:
                 print("")
                 
@@ -302,7 +278,7 @@ class DeviceStatusDataModel {
         default:
             print("")
         }
-
+        
     }
     
     func startSocket(){
@@ -311,26 +287,28 @@ class DeviceStatusDataModel {
     }
     
     func startDetect(){
-      
+        currentRecord.resetDetectRecord()//新纪录 重新赋值检测记录的时间
+
         socket.send("cmd:2--") { () -> () in
             self.detectStatus = btnStatusList.Detecting
         }
-        self.cameraController.shoot()
+        //self.cameraController.shoot()
         
     }
     
     func stopDetect(){
         
-       
+        
         socket.send("cmd:3--",dowork: {
             
         })//通知称台下发数据
-
+        
     }
     
     func saveRecord(){
         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0),{
             
+            self.currentRecord.saveInDb()
             self.detectStatus = btnStatusList.Saved//数据获取完进入保存阶段
             
         })
@@ -338,18 +316,18 @@ class DeviceStatusDataModel {
     
     func cancelDetect(){
         socket.send("cmd:5--", dowork:{
-             self.detectStatus = btnStatusList.Default//数据获取完进入保存阶段
+            self.detectStatus = btnStatusList.Default//数据获取完进入保存阶段
             }
         )
-        }
     }
+}
 
 extension DeviceStatusDataModel:TNClientSocketMsgDelegate{
     func updateFromSocket(content:Dictionary<String,AnyObject>){
         if let code=content["success"]{
             let success=code as! Bool
             if success{
-               
+                
                 let cmd=(content["cmd"] as! NSString).integerValue
                 let deviceID=content["deviceID"] as! Int
                 let value=content["value"] as! String
@@ -373,7 +351,7 @@ extension DeviceStatusDataModel: CameraControllerDelegate {
             
             
             if let elf = self {
-                let path = TNiOSHelper.getDocumentsPath().stringByAppendingString("/t.jpg")
+                let path = TNFileManager.getImagePath().stringByAppendingString(self!.currentRecord.getBigImageName())
                 print(path)
                 imageData.writeToFile(path, atomically: false)
                 elf.recognizer?.recognizePlate(path)
@@ -383,7 +361,7 @@ extension DeviceStatusDataModel: CameraControllerDelegate {
             //显示车牌号,获取、显示小图，设置小图点击链接
             //self.plateImage=UIImage(data: smallImgData)
             //self.plateImage.accessibilityHint=""//通过这个访问大图路径
-        
+            
             
         }
     }
@@ -397,10 +375,10 @@ extension DeviceStatusDataModel: RecognizePlateDelegate {
             if let elf = self {
                 if recognizeResult.getError() == "Success" {
                     
-                    elf.textPlateNumber = recognizeResult.getString()
+                    elf.currentRecord.plate_number = recognizeResult.getString()
                     elf.plateImage = UIImage(data: recognizeResult.getImage())!
                 } else {
-                    elf.textPlateNumber =  "识别有误"
+                    elf.currentRecord.plate_number =  "识别有误"
                 }
             }
         }
@@ -408,6 +386,37 @@ extension DeviceStatusDataModel: RecognizePlateDelegate {
 }
 
 
-
+enum btnStatusList:Int{
+    case Default = 0,Detecting, Analyzing, AutoSaving, Saved, Printing
+    var btnStatus:[[AnyObject]]{
+        switch self{
+        case .Default:
+            return [
+                [true,"开始"],[false,"停止"],[false,"取消"],[false,"保存"],[false,"打印"]
+            ]
+        case .Detecting:
+            return [
+                [false,"检测中"],[true,"停止"],[true,"取消"],[false,"保存"],[false,"打印"]
+            ]
+        case .Analyzing:
+            return [
+                [false,"分析中"],[false,"停止"],[true,"取消"],[false,"保存"],[false,"打印"]
+            ]
+        case .AutoSaving:
+            return [
+                [true,"开始"],[false,"停止"],[true,"取消"],[true,"保存(5)"],[false,"打印"]
+            ]
+        case .Saved:
+            return [
+                [true,"开始"],[false,"停止"],[true,"取消"],[false,"保存"],[true,"打印"]
+            ]
+        case .Printing:
+            return [
+                [true,"开始"],[false,"停止"],[false,"取消"],[false,"保存"],[false,"打印中"]
+            ]
+            
+        }
+    }
+}
 
 

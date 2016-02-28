@@ -37,6 +37,9 @@ class SingleDetailViewController: UIViewController {
     @IBOutlet weak var doneButton: UIButton!
     
     @IBOutlet weak var fullScaleImage: UIImageView!
+    
+    @IBOutlet weak var titleIcon: UIImageView!
+    
 
     var tintColor :UIColor!
     

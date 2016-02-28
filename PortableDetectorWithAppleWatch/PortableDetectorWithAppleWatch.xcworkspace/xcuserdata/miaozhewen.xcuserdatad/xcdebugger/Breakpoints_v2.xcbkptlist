@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PortableDetectorWithAppleWatch/ViewController/SingleDetailViewController.swift"
-            timestampString = "478281995.617421"
+            timestampString = "478316576.307699"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "41"
-            endingLineNumber = "41"
+            startingLineNumber = "44"
+            endingLineNumber = "44"
             landmarkName = "SingleDetailViewController"
             landmarkType = "3">
             <Locations>

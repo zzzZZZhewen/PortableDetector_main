@@ -50,38 +50,27 @@ class RecordsViewController: UIViewController {
     @IBOutlet weak var searchButton: UIButton!
     
     /// dataModel
+   
     var conductDate = NSDate()
-    var conductors = [Detector(id: 0, name: "全部"), Detector(id: 1, name: "缪哲文"), Detector(id: 2, name: "王柏元"), Detector(id: 3, name: "梁栋")]
-    var conductorRow = 0
     
-    var records = [DetectedRecord(id: 0, plate_number: "浙H12345", weight: 42.0, truck_type: truck_types.four.rawValue, axle_number: 4, speed: 12.0, detect_user: 1, plate_photo: "", truck_photo: "", location: "", site_latitude: "", latitude_dir: "", site_longitude: "", longtitude_dir: ""),
-    DetectedRecord(id: 0, plate_number: "浙H12345", weight: 40.0, truck_type: truck_types.four.rawValue, axle_number: 4, speed: 12.0, detect_user: 2, plate_photo: "", truck_photo: "", location: "", site_latitude: "", latitude_dir: "", site_longitude: "", longtitude_dir: ""),
-    DetectedRecord(id: 0, plate_number: "浙H12345", weight: 40.0, truck_type: truck_types.four.rawValue, axle_number: 4, speed: 12.0, detect_user: 3, plate_photo: "", truck_photo: "", location: "", site_latitude: "", latitude_dir: "", site_longitude: "", longtitude_dir: ""),
-    DetectedRecord(id: 0, plate_number: "浙H12345", weight: 39.0, truck_type: truck_types.four.rawValue, axle_number: 4, speed: 12.0, detect_user: 2, plate_photo: "", truck_photo: "", location: "", site_latitude: "", latitude_dir: "", site_longitude: "", longtitude_dir: ""),
-    DetectedRecord(id: 0, plate_number: "浙H12345", weight: 40.0, truck_type: truck_types.four.rawValue, axle_number: 4, speed: 12.0, detect_user: 1, plate_photo: "", truck_photo: "", location: "", site_latitude: "", latitude_dir: "", site_longitude: "", longtitude_dir: "")]
-
+    var conductorRow = 0
+    // conductors = Detector.getAllDetector()
+    
+    var conductors:[Detector] = []
+    
+    var records: [DetectedRecord] = []
     /// life cycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        
+        self.loadDataFromDB()
         self.setSearchPanel()
     }
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(true)
     }
-    
-    override func viewDidLayoutSubviews() {
-        super.viewDidLayoutSubviews()
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        
-        // Dispose of any resources that can be recreated.
-    }
-    
 
     /// MARK: - Navigation
     
@@ -119,6 +108,14 @@ class RecordsViewController: UIViewController {
     
     
     /// MARK: - private
+    
+    ///load data from database
+    
+    func loadDataFromDB(){
+        records=DetectedRecord.getAllRecord()
+        conductors=Detector.getAllDetectors()
+    }
+
     
     func setSearchPanel() {
         plateTextField.delegate = self
@@ -281,10 +278,12 @@ extension RecordsViewController: UITableViewDelegate, UITableViewDataSource {
             let id = "RecordTableViewCellID"
             if let cell = tableView.dequeueReusableCellWithIdentifier(id) as? RecordsTableViewCell {
                 let record = records[indexPath.row]
+            
                 let formatter = NSDateFormatter()
                 formatter.dateStyle = .MediumStyle
                 formatter.timeStyle = .NoStyle
-                cell.dateLabel.text = formatter.stringFromDate(record.detect_time_date)
+                cell.dateLabel.text = formatter.stringFromDate(record.detect_time)
+                
                 cell.plateLabel.text = record.plate_number
                 cell.weightLabel.text = String(format: "%0.1f/%0.1f", record.weight, record.over_weight)
                 return cell

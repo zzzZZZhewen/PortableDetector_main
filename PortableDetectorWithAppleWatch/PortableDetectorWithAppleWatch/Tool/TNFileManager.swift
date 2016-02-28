@@ -1,21 +1,13 @@
 //
-//  TNiOSHelper.swift
+//  TNFileManager.swift
 //  PortableDetector
 //
-//  Created by 缪哲文 on 16/1/21.
+//  Created by brainwang on 16/2/19.
 //  Copyright © 2016年 缪哲文. All rights reserved.
 //
-// 这个类用来提供可复用的函数
 
 import Foundation
-
-class TNiOSHelper {
-    
-//    private static let instance = TNiOSHelper()
-//    /// 定义一个类变量，提供全局的访问入口，类变量不能存储数值，但是可以返回数值
-//    class var sharedHelper: TNiOSHelper {
-//        return instance
-//    }
+class TNFileManager{
     
     
     class func getDocumentsPath () -> String! {
@@ -27,5 +19,12 @@ class TNiOSHelper {
         return documentsPath
     }
     
+    //获取存放车牌大图小图图片目录
+    class func getImagePath()->String! {
+        return getDocumentsPath()?.stringByAppendingString("/image/")
+    }
     
+    class func CreateImageFile()->Bool{
+        return false
+    }
 }

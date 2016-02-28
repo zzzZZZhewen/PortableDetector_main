@@ -64,6 +64,7 @@ class StatusViewController: UIViewController {
     var isAxleTypePickerTableViewCellVisible = false
     
     var axleTypes = truck_types.truckTypes
+    var axleTypeRows = truck_types.truckTypeRows
     var axleTypesRow = 0
     
     var deviceDataModel:DeviceStatusDataModel!
@@ -183,6 +184,23 @@ class StatusViewController: UIViewController {
         })
     }
     
+    //朗读
+    func speak(contentToSpeak:String){
+        let audioSession = AVAudioSession.sharedInstance()
+        do {
+            try audioSession.setCategory(AVAudioSessionCategoryPlayback)
+        }catch let error as NSError{
+            print(error.code)
+        }
+        
+        
+        let av = AVSpeechSynthesizer.init()
+        let utterance1 = AVSpeechUtterance.init(string: contentToSpeak)
+            utterance1.postUtteranceDelay = 0
+            utterance1.rate = 0.55
+            av.speakUtterance(utterance1)
+    }
+    
     //更新检测记录情况
     func loadDetectRecord(deviceStatusDatatModel:DeviceStatusDataModel){
         dispatch_sync(dispatch_get_main_queue(), {
@@ -264,6 +282,13 @@ extension StatusViewController: DeviceStatusDelegate {
     func detectDataModel(didGetStautsWithDataModel dataModel: DeviceStatusDataModel){
         loadDetectRecord(dataModel)//加载下层计算后的数据模型显示界面
     }
+    
+    func readDataModel(didGetStautsWithDataModel dataModel: DeviceStatusDataModel){
+        if(self.currentDetectStatus == btnStatusList.AutoSaving){
+            self.speak(dataModel.currentRecord.description)
+        }
+    }
+    
     func cameraControllerDidInitiated(cameraController: CameraController) {
         if let previewLayer = cameraController.videoPreviewLayer {
             previewLayer.frame = cameraPreview.bounds
@@ -300,19 +325,20 @@ extension StatusViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let id = "SingleRecordDetailTableViewCellID"
         if indexPath.row == smallPlateTableViewCellIndexPath.row {
-            ///
+            self.imageViewSmallPlate.image = deviceDataModel.plateImage
             return smallPlateTableViewCell
         }
         if indexPath.row == plateTableViewCellIndexPath.row {
             if let cell = tableView.dequeueReusableCellWithIdentifier(id) as? SingleRecordDetailTableViewCell {
                 cell.nameLabel.text = "车牌号码"
-                cell.valueLabel.text = ""
+                cell.valueLabel.text = deviceDataModel.currentRecord.plate_number
                 return cell
             }
         }
         if indexPath.row == axleTableViewCellIndexPath.row {
             if let cell = tableView.dequeueReusableCellWithIdentifier(id) as? SingleRecordDetailTableViewCell {
                 cell.nameLabel.text = "车辆轴型"
+                axleTypesRow = axleTypeRows[deviceDataModel.currentRecord.truck_type]!
                 cell.valueLabel.text = axleTypes[axleTypesRow].rawValue
                 if isAxleTypePickerTableViewCellVisible {
                     cell.valueLabel.textColor = cell.valueLabel.tintColor
@@ -328,24 +354,26 @@ extension StatusViewController: UITableViewDelegate, UITableViewDataSource {
         if indexPath.row == weightTableViewCellIndexPath.row {
             if let cell = tableView.dequeueReusableCellWithIdentifier(id) as? SingleRecordDetailTableViewCell {
                 cell.nameLabel.text = "车辆重量"
-                cell.valueLabel.text = ""
+                cell.valueLabel.text = String(format: "%.1f", deviceDataModel.currentRecord.weight)
                 return cell
             }
         }
         if indexPath.row == isOverweightTableViewCellIndexPath.row {
+            self.switchOverWeight.enabled = deviceDataModel.recordEditEnable
+            self.switchOverWeight.setOn(deviceDataModel.currentRecord.over_weight > 0.0 ? true : false, animated: true)
             return isOverweightTableViewCell
         }
         if indexPath.row == overweightTableViewCellIndexPath.row {
             if let cell = tableView.dequeueReusableCellWithIdentifier(id) as? SingleRecordDetailTableViewCell {
                 cell.nameLabel.text = "超载重量"
-                cell.valueLabel.text = ""
+                cell.valueLabel.text = String(format: "%.1f", deviceDataModel.currentRecord.over_weight)
                 return cell
             }
         }
         if indexPath.row == speedTableViewCellIndexPath.row {
             if let cell = tableView.dequeueReusableCellWithIdentifier(id) as? SingleRecordDetailTableViewCell {
                 cell.nameLabel.text = "通过速度"
-                cell.valueLabel.text = ""
+                cell.valueLabel.text = String(format: "%.1f", deviceDataModel.currentRecord.speed)
                 return cell
             }
         }
@@ -354,6 +382,10 @@ extension StatusViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(tableView: UITableView, willSelectRowAtIndexPath indexPath: NSIndexPath) -> NSIndexPath? {
 
+        if !deviceDataModel.recordEditEnable {
+            return nil
+        }
+        
         if indexPath.row == isOverweightTableViewCellIndexPath.row {
             switchOverWeight.setOn(!switchOverWeight.on, animated: true)
         }
