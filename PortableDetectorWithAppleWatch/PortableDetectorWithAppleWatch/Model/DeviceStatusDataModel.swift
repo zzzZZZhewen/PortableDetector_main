@@ -19,7 +19,6 @@ protocol DeviceStatusDelegate: class {
 
 //上面的信息状态栏。电量，信号等
 class DeviceStatusDataModel {
-    weak var delegate:DeviceStatusDelegate!
     var isBalanceAConnected = false{
         didSet{
             if(!isBalanceAConnected){
@@ -142,15 +141,18 @@ class DeviceStatusDataModel {
             case btnStatusList.Detecting:
                 //startDetect()
                 print("检测中")
+                
                 recordEditEnable=false
             case btnStatusList.Analyzing:
                 //stopDetect()
                 print("分析中")
                 recordEditEnable=false
             case btnStatusList.AutoSaving:
+                
                 recordEditEnable=true
                 print("自动保存中")
             case btnStatusList.Saved:
+                
                 recordEditEnable=false
                 print("保存完毕")
                 //
@@ -159,6 +161,11 @@ class DeviceStatusDataModel {
             }
             self.delegate?.statusDataModel(didGetStautsWithDataModel: self) //通知上层更新
             self.delegate?.detectDataModel(didGetStautsWithDataModel: self) //通知上层更新
+            
+            // watch
+            var context = self.toDictForWatch()
+            context["canPullStatus"] = true
+            sessionManager.updateApplicationContext(context)
         }
         
     }
@@ -189,11 +196,96 @@ class DeviceStatusDataModel {
     
     var currentRecord:DetectedRecord!
     
+    
+    weak var delegate:DeviceStatusDelegate!
+    let sessionManager = WatchSessionManager.sharedManager
+    
     init(delegate:DeviceStatusDelegate){
         self.delegate = delegate
         
         socket = TNClientSocket(delegate: self)
         
+        
+        // watch
+        sessionManager.setDidReceiveMessageHandlerForCommand("pullStatus") {(message, replyHandler) -> Void in
+            var reply = self.toDictForWatch()
+            reply["canPullStatus"] = true
+            replyHandler(reply)
+        }
+            
+
+        /// 这里需要提供一个判断是否成功开始和结束的途径
+        sessionManager.setDidReceiveMessageHandlerForCommand("pushStart") {(message, replyHandler) -> Void in
+            
+            // 在这里设置开始 然后回传状态
+            if self.detectStatus == .Default{
+                print("start")
+                self.startDetect()
+            }
+            var dict = self.toDictForWatch()
+            dict["canPushStart"] = true
+            replyHandler(dict)
+        }
+        sessionManager.setDidReceiveMessageHandlerForCommand("pushStop") {(message, replyHandler) -> Void in
+            // 在这里设置停止 然后回传状态
+            
+            
+            
+            if self.detectStatus != .Default{
+                print("stop")
+                self.stopDetect()
+            }
+            var dict = self.toDictForWatch()
+            dict["canPushStop"] = true
+            replyHandler(dict)
+        }
+    }
+    
+    func toDictForWatch() ->[String: AnyObject] {
+        var aSignalLevel = 0
+        if balanceASignalLevel == 0 {
+            aSignalLevel = 3
+        } else if balanceASignalLevel == 1 {
+            aSignalLevel = 2
+        } else if balanceASignalLevel == 2 {
+            aSignalLevel = 1
+        }
+        var bSignalLevel = 0
+        if balanceBSignalLevel == 0 {
+            bSignalLevel = 3
+        } else if balanceBSignalLevel == 1 {
+            bSignalLevel = 2
+        } else if balanceBSignalLevel == 2 {
+            bSignalLevel = 1
+        }
+        
+        var aBatteryLevel = balanceABatteryLevel / 25
+        if aBatteryLevel == 4 {
+            aBatteryLevel = 3
+        }
+        
+        var bBatteryLevel = balanceBBatteryLevel / 25
+        if bBatteryLevel == 4 {
+            bBatteryLevel = 3
+        }
+        
+        let dict: [String : AnyObject] = [
+            "isTesting": detectStatus == .Default ? false : true,
+            "balanceABatteryLevel": aBatteryLevel,
+            "balanceBBatteryLevel": bBatteryLevel,
+            "balanceASignalLevel": aSignalLevel,
+            "balanceBSignalLevel": bSignalLevel,
+            "isInstrumentConnected": isInstrumentConnected,
+            "isAutomobileExisted": hasCar]
+        
+        return dict
+    }
+
+    // serivce
+    func startCamera() {
+        if cameraController != nil {
+            return 
+        }
         cameraController = CameraController(delegate: self)
         delegate.cameraControllerDidInitiated(cameraController)
         
@@ -201,9 +293,7 @@ class DeviceStatusDataModel {
         currentRecord = DetectedRecord(detect_user:1)
     }
     
-    // serivce
-    
-    private func loadStatus(cmd:Int,deviceID:Int,value:String){
+    func loadStatus(cmd:Int,deviceID:Int,value:String){
         print("\(cmd) \(deviceID) \(value)")
         switch cmd{
         case 0://车辆信息
@@ -338,6 +428,10 @@ extension DeviceStatusDataModel:TNClientSocketMsgDelegate{
         }
         
         self.delegate?.statusDataModel(didGetStautsWithDataModel: self) //通知上层更新
+        // watch
+        var context = self.toDictForWatch()
+        context["canPullStatus"] = true
+        sessionManager.updateApplicationContext(context)
     }
 }
 
@@ -369,18 +463,12 @@ extension DeviceStatusDataModel: CameraControllerDelegate {
 
 extension DeviceStatusDataModel: RecognizePlateDelegate {
     func didFinishRecognizePlate(recognizeResult:IdentifyResult) {
-        
-        let queue = dispatch_get_main_queue()
-        dispatch_async(queue) { [weak self]() -> Void in
-            if let elf = self {
-                if recognizeResult.getError() == "Success" {
-                    
-                    elf.currentRecord.plate_number = recognizeResult.getString()
-                    elf.plateImage = UIImage(data: recognizeResult.getImage())!
-                } else {
-                    elf.currentRecord.plate_number =  "识别有误"
-                }
-            }
+        if recognizeResult.getError() == "Success" {
+            
+            self.currentRecord.plate_number = recognizeResult.getString()
+            self.plateImage = UIImage(data: recognizeResult.getImage())!
+        } else {
+            self.currentRecord.plate_number =  "识别有误"
         }
     }
 }

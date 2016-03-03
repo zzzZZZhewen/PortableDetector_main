@@ -121,6 +121,25 @@ class DetectedRecord{
     
     
     
+    
+    ///services 
+    
+    func toDictForWatch () -> [String: AnyObject] {
+        let formatter=NSDateFormatter()
+        formatter.dateFormat="yyyy-MM-dd HH:mm:ss"
+        let dict: [String : AnyObject] = [
+            "plateString": plate_number,
+            "axleTypeString": truck_type.rawValue,
+            "speedString": String(format: "%.1f km/h", speed),
+            "weightString": String(format: "%.1f T", weight),
+            "overWeigthString": String(format: "%.1f", over_weight),
+            "datetimeString": formatter.stringFromDate(detect_time),
+            "isOverWeight": over_weight > 0]
+        
+        return dict
+    }
+    
+    
     //
     func resetDetectRecord(){
         let date:NSDate=NSDate()
@@ -208,13 +227,13 @@ class DetectedRecord{
     
     
     //get all record with a number limit
-    class func getAllRecord(recordNumber number:Int...)->[DetectedRecord]{
+    class func getRecordsWithNumber(number:Int = 0)->[DetectedRecord]{
         let dataBase:DBAdapter = DBAdapter()
         var records: [DetectedRecord] = []
        
         let formatter = NSDateFormatter()
         formatter.dateFormat="yyyy-MM-dd HH:mm:ss"
-        for arecord in (dataBase.getAllRecords(number.count > 0 ? number[0] : number.count ))!{
+        for arecord in (dataBase.getAllRecords(number))!{
             print(arecord)
             
             print(arecord[dataBase.plate_number])

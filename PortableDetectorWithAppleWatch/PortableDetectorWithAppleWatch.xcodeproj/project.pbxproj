@@ -8,8 +8,22 @@
 
 /* Begin PBXBuildFile section */
 		0A96A18F349796309E4301A4 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B106E8F0FF72CB83FB97351 /* Pods.framework */; };
+		811B28891C849FAB008E4F4D /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81D858991C7FF04100E0E3E0 /* Interface.storyboard */; };
+		811B288D1C84A212008E4F4D /* iconfont.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 815F8AB41C82EDBC00DE3DCD /* iconfont.ttf */; };
 		813392921C82051000C4C47D /* TNFileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 813392911C82051000C4C47D /* TNFileManager.swift */; };
 		813392971C82054D00C4C47D /* portable_balance.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 813392961C82054D00C4C47D /* portable_balance.sqlite */; };
+		815F8AC01C82EDBC00DE3DCD /* iconfont.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 815F8AB41C82EDBC00DE3DCD /* iconfont.ttf */; };
+		815F8AC11C82EDBC00DE3DCD /* RecordDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 815F8AB51C82EDBC00DE3DCD /* RecordDataManager.swift */; };
+		815F8AC21C82EDBC00DE3DCD /* RecordInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 815F8AB61C82EDBC00DE3DCD /* RecordInterfaceController.swift */; };
+		815F8AC31C82EDBC00DE3DCD /* RecordViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 815F8AB71C82EDBC00DE3DCD /* RecordViewModel.swift */; };
+		815F8AC41C82EDBC00DE3DCD /* SessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 815F8AB81C82EDBC00DE3DCD /* SessionManager.swift */; };
+		815F8AC51C82EDBC00DE3DCD /* StatusDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 815F8AB91C82EDBC00DE3DCD /* StatusDataManager.swift */; };
+		815F8AC61C82EDBC00DE3DCD /* StatusInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 815F8ABA1C82EDBC00DE3DCD /* StatusInterfaceController.swift */; };
+		815F8AC71C82EDBC00DE3DCD /* StatusViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 815F8ABB1C82EDBC00DE3DCD /* StatusViewModel.swift */; };
+		815F8AC81C82EDBC00DE3DCD /* TNWatchIdentifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 815F8ABC1C82EDBC00DE3DCD /* TNWatchIdentifiers.swift */; };
+		815F8AC91C82EDBC00DE3DCD /* TNWatchOSHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 815F8ABD1C82EDBC00DE3DCD /* TNWatchOSHelper.swift */; };
+		815F8ACA1C82EDBC00DE3DCD /* WatchRecordModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 815F8ABE1C82EDBC00DE3DCD /* WatchRecordModel.swift */; };
+		815F8ACB1C82EDBC00DE3DCD /* WatchStatusModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 815F8ABF1C82EDBC00DE3DCD /* WatchStatusModel.swift */; };
 		81A340471C815CA600357BCC /* SingleDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A340461C815CA600357BCC /* SingleDetailViewController.swift */; };
 		81AA06C21C7FF32D00317E7E /* RecordsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81AA06BF1C7FF32D00317E7E /* RecordsViewController.swift */; };
 		81AA06C31C7FF32D00317E7E /* SingleRecordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81AA06C01C7FF32D00317E7E /* SingleRecordViewController.swift */; };
@@ -51,14 +65,14 @@
 		81AA076C1C802A7800317E7E /* ysocket.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 81AA07691C7FF8AB00317E7E /* ysocket.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		81AA076D1C802BBC00317E7E /* libturbojpeg.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 81AA07011C7FF3B500317E7E /* libturbojpeg.a */; };
 		81AA076E1C802BBC00317E7E /* opencv2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 81AA070B1C7FF3B500317E7E /* opencv2.framework */; };
+		81C71FF31C8528F2008B3A75 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 81C71FF21C8528F2008B3A75 /* Assets.xcassets */; };
+		81C71FFA1C8536DD008B3A75 /* WatchSessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81C71FF91C8536DD008B3A75 /* WatchSessionManager.swift */; };
 		81D858861C7FF04000E0E3E0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81D858851C7FF04000E0E3E0 /* AppDelegate.swift */; };
-		81D8588D1C7FF04000E0E3E0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 81D8588C1C7FF04000E0E3E0 /* Assets.xcassets */; };
 		81D858901C7FF04000E0E3E0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81D8588E1C7FF04000E0E3E0 /* LaunchScreen.storyboard */; };
 		81D858951C7FF04100E0E3E0 /* PortableDetectorWithAppleWatch WatchKit App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 81D858941C7FF04100E0E3E0 /* PortableDetectorWithAppleWatch WatchKit App.app */; };
 		81D8589B1C7FF04100E0E3E0 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81D858991C7FF04100E0E3E0 /* Interface.storyboard */; };
 		81D8589D1C7FF04100E0E3E0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 81D8589C1C7FF04100E0E3E0 /* Assets.xcassets */; };
 		81D858A41C7FF04100E0E3E0 /* PortableDetectorWithAppleWatch WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 81D858A31C7FF04100E0E3E0 /* PortableDetectorWithAppleWatch WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		81D858A91C7FF04100E0E3E0 /* InterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81D858A81C7FF04100E0E3E0 /* InterfaceController.swift */; };
 		81D858AB1C7FF04100E0E3E0 /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81D858AA1C7FF04100E0E3E0 /* ExtensionDelegate.swift */; };
 		81D858AD1C7FF04100E0E3E0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 81D858AC1C7FF04100E0E3E0 /* Assets.xcassets */; };
 /* End PBXBuildFile section */
@@ -142,6 +156,18 @@
 		42AA9ABC67050B97A2711E53 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		813392911C82051000C4C47D /* TNFileManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TNFileManager.swift; sourceTree = "<group>"; };
 		813392961C82054D00C4C47D /* portable_balance.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = portable_balance.sqlite; sourceTree = "<group>"; };
+		815F8AB41C82EDBC00DE3DCD /* iconfont.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = iconfont.ttf; sourceTree = "<group>"; };
+		815F8AB51C82EDBC00DE3DCD /* RecordDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordDataManager.swift; sourceTree = "<group>"; };
+		815F8AB61C82EDBC00DE3DCD /* RecordInterfaceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordInterfaceController.swift; sourceTree = "<group>"; };
+		815F8AB71C82EDBC00DE3DCD /* RecordViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordViewModel.swift; sourceTree = "<group>"; };
+		815F8AB81C82EDBC00DE3DCD /* SessionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SessionManager.swift; sourceTree = "<group>"; };
+		815F8AB91C82EDBC00DE3DCD /* StatusDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusDataManager.swift; sourceTree = "<group>"; };
+		815F8ABA1C82EDBC00DE3DCD /* StatusInterfaceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusInterfaceController.swift; sourceTree = "<group>"; wrapsLines = 1; };
+		815F8ABB1C82EDBC00DE3DCD /* StatusViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusViewModel.swift; sourceTree = "<group>"; };
+		815F8ABC1C82EDBC00DE3DCD /* TNWatchIdentifiers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TNWatchIdentifiers.swift; sourceTree = "<group>"; };
+		815F8ABD1C82EDBC00DE3DCD /* TNWatchOSHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TNWatchOSHelper.swift; sourceTree = "<group>"; };
+		815F8ABE1C82EDBC00DE3DCD /* WatchRecordModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WatchRecordModel.swift; sourceTree = "<group>"; };
+		815F8ABF1C82EDBC00DE3DCD /* WatchStatusModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WatchStatusModel.swift; sourceTree = "<group>"; };
 		81A340461C815CA600357BCC /* SingleDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SingleDetailViewController.swift; sourceTree = "<group>"; };
 		81AA06BF1C7FF32D00317E7E /* RecordsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordsViewController.swift; sourceTree = "<group>"; };
 		81AA06C01C7FF32D00317E7E /* SingleRecordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SingleRecordViewController.swift; sourceTree = "<group>"; };
@@ -203,9 +229,10 @@
 		81AA07571C7FF53900317E7E /* theme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = theme.swift; sourceTree = "<group>"; };
 		81AA075E1C7FF6DD00317E7E /* PortableDetectorWithAppleWatch-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "PortableDetectorWithAppleWatch-Bridging-Header.h"; sourceTree = "<group>"; };
 		81AA07601C7FF8AA00317E7E /* SwiftSocket.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SwiftSocket.xcodeproj; path = "SwiftSocket-master/SwiftSocket.xcodeproj"; sourceTree = "<group>"; };
-		81D858821C7FF04000E0E3E0 /* PortableDetectorWithAppleWatch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PortableDetectorWithAppleWatch.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		81C71FF21C8528F2008B3A75 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		81C71FF91C8536DD008B3A75 /* WatchSessionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WatchSessionManager.swift; sourceTree = "<group>"; };
+		81D858821C7FF04000E0E3E0 /* 便携式超限检测.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "便携式超限检测.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		81D858851C7FF04000E0E3E0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		81D8588C1C7FF04000E0E3E0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		81D8588F1C7FF04000E0E3E0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		81D858911C7FF04000E0E3E0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		81D858941C7FF04100E0E3E0 /* PortableDetectorWithAppleWatch WatchKit App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "PortableDetectorWithAppleWatch WatchKit App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -213,7 +240,6 @@
 		81D8589C1C7FF04100E0E3E0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		81D8589E1C7FF04100E0E3E0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		81D858A31C7FF04100E0E3E0 /* PortableDetectorWithAppleWatch WatchKit Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "PortableDetectorWithAppleWatch WatchKit Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
-		81D858A81C7FF04100E0E3E0 /* InterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterfaceController.swift; sourceTree = "<group>"; };
 		81D858AA1C7FF04100E0E3E0 /* ExtensionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionDelegate.swift; sourceTree = "<group>"; };
 		81D858AC1C7FF04100E0E3E0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		81D858AE1C7FF04100E0E3E0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -240,6 +266,54 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		81857CD61C8853F9006E0DCF /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				815F8AB51C82EDBC00DE3DCD /* RecordDataManager.swift */,
+				815F8AB91C82EDBC00DE3DCD /* StatusDataManager.swift */,
+				815F8ABE1C82EDBC00DE3DCD /* WatchRecordModel.swift */,
+				815F8ABF1C82EDBC00DE3DCD /* WatchStatusModel.swift */,
+			);
+			name = Data;
+			sourceTree = "<group>";
+		};
+		81857CDA1C88540E006E0DCF /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				815F8AB61C82EDBC00DE3DCD /* RecordInterfaceController.swift */,
+				815F8ABA1C82EDBC00DE3DCD /* StatusInterfaceController.swift */,
+			);
+			name = UI;
+			sourceTree = "<group>";
+		};
+		81857CDB1C88541E006E0DCF /* viewModel */ = {
+			isa = PBXGroup;
+			children = (
+				815F8AB71C82EDBC00DE3DCD /* RecordViewModel.swift */,
+				815F8ABB1C82EDBC00DE3DCD /* StatusViewModel.swift */,
+			);
+			name = viewModel;
+			sourceTree = "<group>";
+		};
+		81857CDC1C88542F006E0DCF /* tool */ = {
+			isa = PBXGroup;
+			children = (
+				815F8ABC1C82EDBC00DE3DCD /* TNWatchIdentifiers.swift */,
+				815F8ABD1C82EDBC00DE3DCD /* TNWatchOSHelper.swift */,
+			);
+			name = tool;
+			sourceTree = "<group>";
+		};
+		81857CDD1C885452006E0DCF /* support */ = {
+			isa = PBXGroup;
+			children = (
+				81D858AE1C7FF04100E0E3E0 /* Info.plist */,
+				81D858AC1C7FF04100E0E3E0 /* Assets.xcassets */,
+				815F8AB41C82EDBC00DE3DCD /* iconfont.ttf */,
+			);
+			name = support;
+			sourceTree = "<group>";
+		};
 		81AA06BE1C7FF32D00317E7E /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
@@ -408,6 +482,14 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		81C71FF81C8536AB008B3A75 /* Watch */ = {
+			isa = PBXGroup;
+			children = (
+				81C71FF91C8536DD008B3A75 /* WatchSessionManager.swift */,
+			);
+			name = Watch;
+			sourceTree = "<group>";
+		};
 		81D858791C7FF04000E0E3E0 = {
 			isa = PBXGroup;
 			children = (
@@ -423,7 +505,7 @@
 		81D858831C7FF04000E0E3E0 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				81D858821C7FF04000E0E3E0 /* PortableDetectorWithAppleWatch.app */,
+				81D858821C7FF04000E0E3E0 /* 便携式超限检测.app */,
 				81D858941C7FF04100E0E3E0 /* PortableDetectorWithAppleWatch WatchKit App.app */,
 				81D858A31C7FF04100E0E3E0 /* PortableDetectorWithAppleWatch WatchKit Extension.appex */,
 			);
@@ -434,6 +516,7 @@
 			isa = PBXGroup;
 			children = (
 				81AA075E1C7FF6DD00317E7E /* PortableDetectorWithAppleWatch-Bridging-Header.h */,
+				81C71FF81C8536AB008B3A75 /* Watch */,
 				81AA07561C7FF53900317E7E /* Utils */,
 				81AA07271C7FF3D200317E7E /* Socket */,
 				81AA06D91C7FF3B500317E7E /* Tool */,
@@ -442,7 +525,7 @@
 				81AA06C81C7FF38A00317E7E /* UI */,
 				81AA06BE1C7FF32D00317E7E /* ViewController */,
 				81D858851C7FF04000E0E3E0 /* AppDelegate.swift */,
-				81D8588C1C7FF04000E0E3E0 /* Assets.xcassets */,
+				81C71FF21C8528F2008B3A75 /* Assets.xcassets */,
 				81AA06C51C7FF34500317E7E /* Main.storyboard */,
 				81D8588E1C7FF04000E0E3E0 /* LaunchScreen.storyboard */,
 				81D858911C7FF04000E0E3E0 /* Info.plist */,
@@ -463,10 +546,13 @@
 		81D858A71C7FF04100E0E3E0 /* PortableDetectorWithAppleWatch WatchKit Extension */ = {
 			isa = PBXGroup;
 			children = (
-				81D858A81C7FF04100E0E3E0 /* InterfaceController.swift */,
+				81857CDD1C885452006E0DCF /* support */,
+				815F8AB81C82EDBC00DE3DCD /* SessionManager.swift */,
+				81857CDC1C88542F006E0DCF /* tool */,
+				81857CDB1C88541E006E0DCF /* viewModel */,
+				81857CDA1C88540E006E0DCF /* UI */,
+				81857CD61C8853F9006E0DCF /* Data */,
 				81D858AA1C7FF04100E0E3E0 /* ExtensionDelegate.swift */,
-				81D858AC1C7FF04100E0E3E0 /* Assets.xcassets */,
-				81D858AE1C7FF04100E0E3E0 /* Info.plist */,
 			);
 			path = "PortableDetectorWithAppleWatch WatchKit Extension";
 			sourceTree = "<group>";
@@ -511,7 +597,7 @@
 			);
 			name = PortableDetectorWithAppleWatch;
 			productName = PortableDetectorWithAppleWatch;
-			productReference = 81D858821C7FF04000E0E3E0 /* PortableDetectorWithAppleWatch.app */;
+			productReference = 81D858821C7FF04000E0E3E0 /* 便携式超限检测.app */;
 			productType = "com.apple.product-type.application";
 		};
 		81D858931C7FF04100E0E3E0 /* PortableDetectorWithAppleWatch WatchKit App */ = {
@@ -634,8 +720,8 @@
 				81AA06C71C7FF34500317E7E /* Main.storyboard in Resources */,
 				81AA07241C7FF3B500317E7E /* svm.xml in Resources */,
 				81D858901C7FF04000E0E3E0 /* LaunchScreen.storyboard in Resources */,
+				81C71FF31C8528F2008B3A75 /* Assets.xcassets in Resources */,
 				81AA07211C7FF3B500317E7E /* ann.xml in Resources */,
-				81D8588D1C7FF04000E0E3E0 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -645,6 +731,7 @@
 			files = (
 				81D8589D1C7FF04100E0E3E0 /* Assets.xcassets in Resources */,
 				81D8589B1C7FF04100E0E3E0 /* Interface.storyboard in Resources */,
+				811B288D1C84A212008E4F4D /* iconfont.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -652,6 +739,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				815F8AC01C82EDBC00DE3DCD /* iconfont.ttf in Resources */,
+				811B28891C849FAB008E4F4D /* Interface.storyboard in Resources */,
 				81D858AD1C7FF04100E0E3E0 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -745,6 +834,7 @@
 				81AA070F1C7FF3B500317E7E /* stitching.cpp in Sources */,
 				81AA071F1C7FF3B500317E7E /* UIImageCVMatConverter.mm in Sources */,
 				81AA07141C7FF3B500317E7E /* chars_recognise.cpp in Sources */,
+				81C71FFA1C8536DD008B3A75 /* WatchSessionManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -752,8 +842,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				815F8ACB1C82EDBC00DE3DCD /* WatchStatusModel.swift in Sources */,
 				81D858AB1C7FF04100E0E3E0 /* ExtensionDelegate.swift in Sources */,
-				81D858A91C7FF04100E0E3E0 /* InterfaceController.swift in Sources */,
+				815F8AC41C82EDBC00DE3DCD /* SessionManager.swift in Sources */,
+				815F8AC61C82EDBC00DE3DCD /* StatusInterfaceController.swift in Sources */,
+				815F8ACA1C82EDBC00DE3DCD /* WatchRecordModel.swift in Sources */,
+				815F8AC21C82EDBC00DE3DCD /* RecordInterfaceController.swift in Sources */,
+				815F8AC51C82EDBC00DE3DCD /* StatusDataManager.swift in Sources */,
+				815F8AC31C82EDBC00DE3DCD /* RecordViewModel.swift in Sources */,
+				815F8AC71C82EDBC00DE3DCD /* StatusViewModel.swift in Sources */,
+				815F8AC81C82EDBC00DE3DCD /* TNWatchIdentifiers.swift in Sources */,
+				815F8AC91C82EDBC00DE3DCD /* TNWatchOSHelper.swift in Sources */,
+				815F8AC11C82EDBC00DE3DCD /* RecordDataManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -962,7 +1062,7 @@
 					"$(PROJECT_DIR)/PortableDetectorWithAppleWatch/Tool/RecognizePlateRequire",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = miao.PortableDetectorWithAppleWatch;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "便携式超限检测";
 				SWIFT_OBJC_BRIDGING_HEADER = "PortableDetectorWithAppleWatch/PortableDetectorWithAppleWatch-Bridging-Header.h";
 			};
 			name = Debug;
@@ -984,7 +1084,7 @@
 					"$(PROJECT_DIR)/PortableDetectorWithAppleWatch/Tool/RecognizePlateRequire",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = miao.PortableDetectorWithAppleWatch;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "便携式超限检测";
 				SWIFT_OBJC_BRIDGING_HEADER = "PortableDetectorWithAppleWatch/PortableDetectorWithAppleWatch-Bridging-Header.h";
 			};
 			name = Release;

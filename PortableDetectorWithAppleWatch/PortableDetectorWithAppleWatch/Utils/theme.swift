@@ -41,7 +41,7 @@ public let AxleStyleArray: [String] = ["两轴车","三轴车"]
 
 //socket
 struct socketInfo{
-   static let weightAHost = "192.168.216.1"
+   static let weightAHost = "192.168.1.219"
    static let weightAPort = 800
     
    static let weightBHost = "192.168.216.1"

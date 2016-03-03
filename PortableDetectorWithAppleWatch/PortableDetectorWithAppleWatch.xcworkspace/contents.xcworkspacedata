@@ -2,7 +2,7 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:PortableDetectorWithAppleWatch.xcodeproj">
+      location = "group:/Users/miaozhewen/Downloads/GIT/PortableDetector_main/PortableDetectorWithAppleWatch/PortableDetectorWithAppleWatch.xcodeproj">
    </FileRef>
    <FileRef
       location = "group:Pods/Pods.xcodeproj">

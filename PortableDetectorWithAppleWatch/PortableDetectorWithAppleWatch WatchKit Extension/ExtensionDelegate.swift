@@ -1,14 +1,23 @@
 //
 //  ExtensionDelegate.swift
-//  PortableDetectorWithAppleWatch WatchKit Extension
+//  WatchForPD WatchKit Extension
 //
-//  Created by 缪哲文 on 16/2/26.
+//  Created by 缪哲文 on 16/1/28.
 //  Copyright © 2016年 缪哲文. All rights reserved.
 //
 
 import WatchKit
+import WatchConnectivity
 
 class ExtensionDelegate: NSObject, WKExtensionDelegate {
+    
+    override init() {
+        if WCSession.isSupported() {
+            SessionManager.sharedManager.startSession()
+        } else {
+            print("WCSession not support")
+        }
+    }
 
     func applicationDidFinishLaunching() {
         // Perform any final initialization of your application.

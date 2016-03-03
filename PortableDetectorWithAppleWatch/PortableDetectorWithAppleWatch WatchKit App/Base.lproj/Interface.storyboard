@@ -1,15 +1,252 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="9531" systemVersion="15D21" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="AgC-eL-Hgc">
     <dependencies>
+        <deployment version="512" identifier="watchOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="9515"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <mutableArray key="iconfont.ttf">
+            <string>iconfont</string>
+            <string>iconfont</string>
+            <string>iconfont</string>
+            <string>iconfont</string>
+            <string>iconfont</string>
+            <string>iconfont</string>
+            <string>iconfont</string>
+            <string>iconfont</string>
+            <string>iconfont</string>
+            <string>iconfont</string>
+        </mutableArray>
+    </customFonts>
     <scenes>
-        <!--Interface Controller-->
+        <!--检测状态-->
         <scene sceneID="aou-V4-d1y">
             <objects>
-                <controller id="AgC-eL-Hgc" customClass="InterfaceController" customModule="PortableDetectorWithAppleWatch_WatchKit_App" customModuleProvider="target"/>
+                <controller identifier="StatusInterfaceControllerID" title="检测状态" spacing="3" id="AgC-eL-Hgc" customClass="StatusInterfaceController" customModule="PortableDetectorWithAppleWatch_WatchKit_Extension">
+                    <items>
+                        <group width="1" height="0.23999999999999999" heightAdjustment="1" alignment="left" id="2jA-xv-whh">
+                            <items>
+                                <separator height="1" heightAdjustment="-4" alignment="left" verticalAlignment="center" id="3VS-uw-IMd">
+                                    <color key="color" red="0.21568627450980393" green="0.93725490196078431" blue="0.45490196078431372" alpha="1" colorSpace="calibratedRGB"/>
+                                </separator>
+                                <group width="22" height="1" alignment="left" verticalAlignment="center" id="miv-C4-ETe">
+                                    <items>
+                                        <label alignment="center" verticalAlignment="center" text="H" id="lCE-Fj-lYB">
+                                            <color key="textColor" red="0.21176470588235294" green="0.94509803921568625" blue="0.38039215686274508" alpha="1" colorSpace="calibratedRGB"/>
+                                            <fontDescription key="font" name="iconfont" family="iconfont" pointSize="18"/>
+                                        </label>
+                                    </items>
+                                    <edgeInsets key="margins" left="0.0" right="0.0" top="2" bottom="0.0"/>
+                                </group>
+                                <label alignment="left" verticalAlignment="center" text="秤台A" id="9pa-3b-1fO">
+                                    <fontDescription key="font" style="UICTFontTextStyleBody"/>
+                                </label>
+                                <group width="22" height="1" alignment="right" verticalAlignment="center" id="J7B-EQ-KpN">
+                                    <items>
+                                        <label alignment="center" verticalAlignment="center" text="B" id="e0t-kJ-Kwj">
+                                            <color key="textColor" red="0.20784313725490197" green="0.95686274509803926" blue="0.30980392156862746" alpha="1" colorSpace="calibratedRGB"/>
+                                            <fontDescription key="font" name="iconfont" family="iconfont" pointSize="18"/>
+                                        </label>
+                                    </items>
+                                    <edgeInsets key="margins" left="0.0" right="0.0" top="2" bottom="0.0"/>
+                                </group>
+                                <group width="22" height="1" alignment="right" verticalAlignment="center" id="YbW-yP-I6J">
+                                    <items>
+                                        <label alignment="center" verticalAlignment="center" text="S" id="1uk-ZX-e7K">
+                                            <color key="textColor" red="0.20784313725490197" green="0.95686274509803926" blue="0.30980392156862746" alpha="1" colorSpace="calibratedRGB"/>
+                                            <fontDescription key="font" name="iconfont" family="iconfont" pointSize="18"/>
+                                        </label>
+                                    </items>
+                                    <edgeInsets key="margins" left="0.0" right="0.0" top="2" bottom="0.0"/>
+                                </group>
+                            </items>
+                            <color key="backgroundColor" red="0.94901960784313721" green="0.95686274509803915" blue="0.9882352941176471" alpha="0.13984374999999999" colorSpace="calibratedRGB"/>
+                            <edgeInsets key="margins" left="5" right="5" top="0.0" bottom="0.0"/>
+                        </group>
+                        <group width="1" height="0.23999999999999999" heightAdjustment="1" alignment="left" id="Ww6-ra-dFa">
+                            <items>
+                                <separator height="1" heightAdjustment="-4" alignment="left" verticalAlignment="center" id="Zsb-eQ-cK2">
+                                    <color key="color" red="0.070588235294117646" green="0.63137254901960782" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </separator>
+                                <group width="22" height="1" alignment="left" verticalAlignment="center" id="eTF-5B-BYP">
+                                    <items>
+                                        <label alignment="center" verticalAlignment="center" text="H" id="aWb-2t-1E3">
+                                            <color key="textColor" red="0.094117647058823528" green="0.5490196078431373" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                            <fontDescription key="font" name="iconfont" family="iconfont" pointSize="18"/>
+                                        </label>
+                                    </items>
+                                    <edgeInsets key="margins" left="0.0" right="0.0" top="2" bottom="0.0"/>
+                                </group>
+                                <label alignment="left" verticalAlignment="center" text="秤台B" id="QCm-on-qNj">
+                                    <fontDescription key="font" style="UICTFontTextStyleBody"/>
+                                </label>
+                                <group width="22" height="1" alignment="right" verticalAlignment="center" id="wmD-Ut-d5x">
+                                    <items>
+                                        <label alignment="center" verticalAlignment="center" text="B" id="Cay-G3-ME2">
+                                            <color key="textColor" red="0.094117647058823528" green="0.5490196078431373" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                            <fontDescription key="font" name="iconfont" family="iconfont" pointSize="18"/>
+                                        </label>
+                                    </items>
+                                    <edgeInsets key="margins" left="0.0" right="0.0" top="2" bottom="0.0"/>
+                                </group>
+                                <group width="22" height="1" alignment="right" verticalAlignment="center" id="ARw-Hi-jHj">
+                                    <items>
+                                        <label alignment="center" verticalAlignment="center" text="S" id="kQn-M7-naz">
+                                            <color key="textColor" red="0.094117647058823528" green="0.5490196078431373" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                            <fontDescription key="font" name="iconfont" family="iconfont" pointSize="18"/>
+                                        </label>
+                                    </items>
+                                    <edgeInsets key="margins" left="0.0" right="0.0" top="2" bottom="0.0"/>
+                                </group>
+                            </items>
+                            <color key="backgroundColor" red="0.94901960784313721" green="0.95686274509803915" blue="0.9882352941176471" alpha="0.13984374999999999" colorSpace="calibratedRGB"/>
+                            <edgeInsets key="margins" left="5" right="5" top="0.0" bottom="0.0"/>
+                        </group>
+                        <group width="1" height="0.23999999999999999" heightAdjustment="1" alignment="left" id="wUx-NX-Qtm">
+                            <items>
+                                <separator height="1" heightAdjustment="-4" alignment="left" verticalAlignment="center" id="8Tm-1R-oqC">
+                                    <color key="color" red="1" green="0.18431372549019609" blue="0.3411764705882353" alpha="1" colorSpace="calibratedRGB"/>
+                                </separator>
+                                <group width="22" height="1" alignment="left" verticalAlignment="center" id="Xnc-4l-4h6">
+                                    <items>
+                                        <label alignment="center" verticalAlignment="center" text="H" id="zjY-9P-yh2">
+                                            <color key="textColor" red="0.98431372549019602" green="0.058823529411764705" blue="0.27450980392156865" alpha="1" colorSpace="calibratedRGB"/>
+                                            <fontDescription key="font" name="iconfont" family="iconfont" pointSize="18"/>
+                                        </label>
+                                    </items>
+                                    <edgeInsets key="margins" left="0.0" right="0.0" top="2" bottom="0.0"/>
+                                </group>
+                                <label alignment="left" verticalAlignment="center" text="仪表" id="Ncu-x2-sf7">
+                                    <fontDescription key="font" style="UICTFontTextStyleBody"/>
+                                </label>
+                                <group width="22" height="1" alignment="right" verticalAlignment="center" id="aMY-2K-1DS">
+                                    <items>
+                                        <label alignment="center" verticalAlignment="center" text="C" id="VEJ-On-MOC">
+                                            <color key="textColor" red="0.96470588235294119" green="0.0" blue="0.21568627450980393" alpha="1" colorSpace="calibratedRGB"/>
+                                            <fontDescription key="font" name="iconfont" family="iconfont" pointSize="18"/>
+                                        </label>
+                                    </items>
+                                    <edgeInsets key="margins" left="0.0" right="0.0" top="2" bottom="0.0"/>
+                                </group>
+                            </items>
+                            <color key="backgroundColor" red="0.94901960784313721" green="0.95686274509803915" blue="0.9882352941176471" alpha="0.13984374999999999" colorSpace="calibratedRGB"/>
+                            <edgeInsets key="margins" left="5" right="5" top="0.0" bottom="0.0"/>
+                        </group>
+                        <group width="1" height="0.23999999999999999" heightAdjustment="1" alignment="left" id="o3h-BZ-wli">
+                            <items>
+                                <separator height="1" heightAdjustment="-4" alignment="left" verticalAlignment="center" id="WJJ-Qv-z6b">
+                                    <color key="color" red="1" green="0.58823529411764708" blue="0.011764705882352941" alpha="1" colorSpace="calibratedRGB"/>
+                                </separator>
+                                <group width="22" height="1" alignment="left" verticalAlignment="center" id="7CT-8a-5b6">
+                                    <items>
+                                        <label alignment="center" verticalAlignment="center" text="H" id="wph-4o-wyx">
+                                            <color key="textColor" red="1" green="0.58823529411764708" blue="0.011764705882352941" alpha="1" colorSpace="calibratedRGB"/>
+                                            <fontDescription key="font" name="iconfont" family="iconfont" pointSize="18"/>
+                                        </label>
+                                    </items>
+                                    <edgeInsets key="margins" left="0.0" right="0.0" top="2" bottom="0.0"/>
+                                </group>
+                                <label alignment="left" verticalAlignment="center" text="状态" id="a7U-tN-ZOX">
+                                    <fontDescription key="font" style="UICTFontTextStyleBody"/>
+                                </label>
+                                <label alignment="right" verticalAlignment="center" text="Status" id="ATF-Ph-E4W">
+                                    <color key="textColor" red="1" green="0.58823529411764708" blue="0.011764705882352941" alpha="1" colorSpace="calibratedRGB"/>
+                                    <fontDescription key="font" type="system" pointSize="15"/>
+                                </label>
+                            </items>
+                            <color key="backgroundColor" red="0.94901960784313721" green="0.95686274509803915" blue="0.9882352941176471" alpha="0.13984374999999999" colorSpace="calibratedRGB"/>
+                            <edgeInsets key="margins" left="5" right="5" top="0.0" bottom="0.0"/>
+                        </group>
+                    </items>
+                    <edgeInsets key="margins" left="2" right="2" top="5" bottom="0.0"/>
+                    <connections>
+                        <outlet property="automobileIcon" destination="wph-4o-wyx" id="XGQ-Et-ZcH"/>
+                        <outlet property="automobileStatus" destination="ATF-Ph-E4W" id="G0O-K9-ENe"/>
+                        <outlet property="balanceABattery" destination="e0t-kJ-Kwj" id="jQh-31-luJ"/>
+                        <outlet property="balanceAIcon" destination="lCE-Fj-lYB" id="xFe-ge-IB2"/>
+                        <outlet property="balanceASignal" destination="1uk-ZX-e7K" id="VEz-hU-FNw"/>
+                        <outlet property="balanceBBattery" destination="Cay-G3-ME2" id="F5m-qV-MiL"/>
+                        <outlet property="balanceBIcon" destination="aWb-2t-1E3" id="2Li-em-9i0"/>
+                        <outlet property="balanceBSignal" destination="kQn-M7-naz" id="4Wa-qR-VNz"/>
+                        <outlet property="instrumentConnection" destination="VEJ-On-MOC" id="rnN-V1-ziU"/>
+                        <outlet property="instrumentIcon" destination="zjY-9P-yh2" id="TMq-wO-0La"/>
+                    </connections>
+                </controller>
             </objects>
+            <point key="canvasLocation" x="-415" y="821.5"/>
+        </scene>
+        <!--返回-->
+        <scene sceneID="Or3-ah-lsU">
+            <objects>
+                <controller identifier="RecordInterfaceControllerID" title="返回" spacing="0.0" id="NgX-55-ifz" customClass="RecordInterfaceController" customModule="PortableDetectorWithAppleWatch_WatchKit_Extension">
+                    <items>
+                        <group width="1" alignment="left" spacing="2" id="dWh-Rh-YbN">
+                            <items>
+                                <group width="40" height="40" alignment="left" id="aev-00-c6X">
+                                    <items>
+                                        <label alignment="center" verticalAlignment="center" text="H" id="yd8-2U-zp8">
+                                            <color key="textColor" red="0.094117647058823528" green="0.5490196078431373" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                            <fontDescription key="font" name="iconfont" family="iconfont" pointSize="28"/>
+                                        </label>
+                                    </items>
+                                </group>
+                                <group alignment="left" layout="vertical" spacing="0.0" id="6uC-rK-JPI">
+                                    <items>
+                                        <label alignment="left" text="未知车牌" id="15J-Gk-Cz8">
+                                            <color key="textColor" red="0.070588235289999995" green="0.63137254899999995" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        </label>
+                                        <label alignment="left" text="未知轴型" id="kUS-p4-t8t">
+                                            <fontDescription key="font" style="UICTFontTextStyleCaption1"/>
+                                        </label>
+                                    </items>
+                                </group>
+                            </items>
+                            <edgeInsets key="margins" left="0.0" right="0.0" top="0.0" bottom="0.0"/>
+                        </group>
+                        <group width="1" alignment="left" layout="vertical" spacing="0.0" id="MDZ-nO-vAI">
+                            <items>
+                                <label alignment="left" text="未知车速" id="h5b-mp-er3">
+                                    <fontDescription key="font" style="UICTFontTextStyleBody"/>
+                                </label>
+                                <label width="1" height="36" alignment="left" text="未知车重" id="f5z-tz-bvh">
+                                    <color key="textColor" red="0.070588235289999995" green="0.63137254899999995" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    <fontDescription key="font" type="system" pointSize="36"/>
+                                </label>
+                                <label alignment="left" text="未知" id="rC1-n3-jGE">
+                                    <color key="textColor" red="0.015686274509803921" green="0.87058823529411766" blue="0.44313725490196076" alpha="1" colorSpace="calibratedRGB"/>
+                                </label>
+                            </items>
+                        </group>
+                        <group width="1" alignment="left" spacing="1" id="yzw-iI-ZA5">
+                            <items>
+                                <button width="0.5" height="30" alignment="left" title="打印" id="udK-yw-p0Z">
+                                    <connections>
+                                        <action selector="didPrintButtonTapped" destination="NgX-55-ifz" id="L4j-AU-9gT"/>
+                                    </connections>
+                                </button>
+                                <button width="0.5" height="30" alignment="right" title="删除" id="iqS-OS-mLe">
+                                    <color key="titleColor" red="0.96470588235294119" green="0.0" blue="0.21568627450980393" alpha="1" colorSpace="calibratedRGB"/>
+                                    <connections>
+                                        <action selector="didDeleteButtonTapped" destination="NgX-55-ifz" id="lg2-Tg-Zs7"/>
+                                    </connections>
+                                </button>
+                            </items>
+                        </group>
+                    </items>
+                    <edgeInsets key="margins" left="2" right="1" top="0.0" bottom="0.0"/>
+                    <connections>
+                        <outlet property="axleType" destination="kUS-p4-t8t" id="bzt-P2-C4Y"/>
+                        <outlet property="overweight" destination="rC1-n3-jGE" id="0YM-Lw-igk"/>
+                        <outlet property="plate" destination="15J-Gk-Cz8" id="mON-Of-Uew"/>
+                        <outlet property="recordIcon" destination="yd8-2U-zp8" id="EwW-XW-af3"/>
+                        <outlet property="speed" destination="h5b-mp-er3" id="A3M-MK-3na"/>
+                        <outlet property="weight" destination="f5z-tz-bvh" id="v7c-9q-2d9"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="-237" y="819"/>
         </scene>
     </scenes>
+    <color key="tintColor" red="0.12549019607843137" green="0.58039215686274503" blue="0.98039215686274506" alpha="1" colorSpace="calibratedRGB"/>
 </document>

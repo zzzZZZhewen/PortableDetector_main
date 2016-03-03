@@ -54,9 +54,8 @@ class RecordsViewController: UIViewController {
     var conductDate = NSDate()
     
     var conductorRow = 0
-    // conductors = Detector.getAllDetector()
     
-    var conductors:[Detector] = []
+    var conductors: [Detector] = []
     
     var records: [DetectedRecord] = []
     /// life cycle
@@ -112,8 +111,8 @@ class RecordsViewController: UIViewController {
     ///load data from database
     
     func loadDataFromDB(){
-        records=DetectedRecord.getAllRecord()
-        conductors=Detector.getAllDetectors()
+        records = DetectedRecord.getRecordsWithNumber()
+        conductors = Detector.getAllDetectors()
     }
 
     
@@ -134,7 +133,10 @@ class RecordsViewController: UIViewController {
     }
     
     func updateConductorName() {
-        conductorLabel.text = conductors[conductorRow].detectorName
+        if conductors.count > 0 {
+            
+            conductorLabel.text = conductors[conductorRow].detectorName
+        }
     }
     
     
@@ -222,7 +224,7 @@ extension RecordsViewController: UITableViewDelegate, UITableViewDataSource {
         if tableView == searchPanelTableView {
             return 1
         } else {
-            return 1
+            return records.count > 0 ? 1 : 0
         }
     }
     
@@ -302,8 +304,13 @@ extension RecordsViewController: UITableViewDelegate, UITableViewDataSource {
             if indexPath.row == plateInputTableCellIndexPath.row {
                 plateTextField.becomeFirstResponder()
             }
-            if indexPath.row == conductDateTableCellIndexPath.row || indexPath.row == conductorTableCellIndexPath.row {
+            if indexPath.row == conductDateTableCellIndexPath.row {
                 return indexPath
+            }
+            if indexPath.row == conductorTableCellIndexPath.row {
+                if conductors.count > 0 {
+                    return indexPath
+                }
             }
             hideConductorPicker()
             hideDatePicker()
@@ -361,7 +368,7 @@ extension RecordsViewController: UITextFieldDelegate {
 
 extension RecordsViewController: UIPickerViewDelegate, UIPickerViewDataSource {
     func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {
-        return 1
+        return conductors.count > 0 ? 1 : 0
     }
     func pickerView(pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         return conductors.count

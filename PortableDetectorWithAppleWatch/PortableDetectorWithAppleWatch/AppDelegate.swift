@@ -7,14 +7,61 @@
 //
 
 import UIKit
+import WatchConnectivity
+
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
+    
+    let sessionManager = WatchSessionManager.sharedManager
+    var recordsForWatch :[String: AnyObject]?
+    
+    override init() {
+        super.init()
+        if WCSession.isSupported() {
+            WatchSessionManager.sharedManager.startSession()
+        } else {
+            print("WCSession not supported")
+        }
+        //监听watch动作
+        sessionManager.setDidReceiveMessageHandlerForCommand("pullStatus") { (message, replyHandler) -> Void in
+            replyHandler(["canPullStatus": false])
+        }
+        sessionManager.setDidReceiveMessageHandlerForCommand("pullRecord") {(message, replyHandler) -> Void in
+            let number = message["number"] as! Int
+            var records = [[String: AnyObject]]()
+            for record in DetectedRecord.getRecordsWithNumber(number) {
+                records.append(record.toDictForWatch())
+            }
+            
+            var result: [String: AnyObject] = ["numberOfRecords": records.count]
+            
+            result["records"] = records
+            result["canPullRecord"] = true
+            
+            print(result)
+            replyHandler(result)
+        }
+        sessionManager.setDidReceiveMessageHandlerForCommand("pushStart") { (message, replyHandler) -> Void in
+            replyHandler(["canPushStart": false])
+        }
+        sessionManager.setDidReceiveMessageHandlerForCommand("pushStop") { (message, replyHandler) -> Void in
+            replyHandler(["canPushStop": false])
+        }
+        sessionManager.setDidReceiveMessageHandlerForCommand("deleteRecord") { (message, replyHandler) -> Void in
+            
+            replyHandler(["canDeleteRecord": false])
+        }
+        sessionManager.setDidReceiveMessageHandlerForCommand("printRecord") { (message, replyHandler) -> Void in
+            replyHandler(["canPrintRecord": false])
+        }
+    }
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
+        // 不让黑屏
+        UIApplication.sharedApplication().idleTimerDisabled = true
         // Override point for customization after application launch.
         return true
     }

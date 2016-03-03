@@ -102,6 +102,7 @@ class StatusViewController: UIViewController {
 
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
+        deviceDataModel.startCamera()
         self.detectRecordTableView.reloadData()
     }
     
@@ -276,7 +277,8 @@ class StatusViewController: UIViewController {
 
 extension StatusViewController: DeviceStatusDelegate {
     func statusDataModel(didGetStautsWithDataModel dataModel: DeviceStatusDataModel){
-        loadDeviceStatus(dataModel)//加载下层计算后的数据模型显示界面
+        loadDeviceStatus(dataModel)//加载下层计算后数据模型显示界面
+        
     }
     
     func detectDataModel(didGetStautsWithDataModel dataModel: DeviceStatusDataModel){
