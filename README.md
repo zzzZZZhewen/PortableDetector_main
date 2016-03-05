@@ -1,4 +1,4 @@
-### PD_iOS客户端项目框架
+### PortableDetector_iOS客户端项目框架
 
 使用外部库：
 
